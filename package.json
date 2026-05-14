@@ -1,15 +1,16 @@
 {
   "name": "shrines-temples-mock",
   "version": "1.0.0",
-  "description": "全国神社仏閣まとめ モックサイト (Node.js)",
+  "description": "全国神社仏閣まとめサイトのモックサーバー（Node.js + Express）",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev":   "node server.js"
+    "dev": "node --watch server.js"
   },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "private": true,
-  "license": "UNLICENSED"
+  "keywords": ["mock", "express", "shrines", "temples"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }

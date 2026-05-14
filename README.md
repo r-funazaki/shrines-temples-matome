@@ -1,7 +1,6 @@
-# 全国神社仏閣まとめ｜モックサイト
+# 全国神社仏閣まとめ — Node.js モックサーバー
 
-Node.jsで動く、静的HTMLを配信するモックサーバーです。
-**外部依存なし**（Node.js標準モジュールのみ使用）なので、`npm install` は不要です。
+添付HTMLをローカルでブラウザ表示するための、最小構成のExpressサーバーです。
 
 ---
 
@@ -9,67 +8,135 @@ Node.jsで動く、静的HTMLを配信するモックサーバーです。
 
 ```
 shrines-temples-mock/
-├── server.js          ← Node.js サーバー本体 (標準モジュールのみ)
-├── package.json       ← プロジェクト定義 (npm start で起動可能に)
-├── README.md          ← このファイル
-└── public/
-    └── index.html     ← 配信するHTML (アップロードされたファイル)
+├── package.json          # 依存定義（express のみ）
+├── server.js             # Expressサーバー本体（静的配信 + モックAPI）
+├── public/
+│   └── index.html        # 添付HTML（そのまま配置）
+└── README.md             # このファイル
 ```
 
 ---
 
-## 🚀 起動手順
+## 🛠 前提
 
-### 1. Node.js が入っているか確認
-```bash
-node -v
-```
-> v14 以上であればOK。未インストールの場合は https://nodejs.org/ から導入してください。
+- Node.js **18 以上** がインストール済みであること（推奨: 20.x / 22.x LTS）
+- 確認コマンド:
+  ```bash
+  node -v
+  npm -v
+  ```
+- 未インストールの場合は <https://nodejs.org/ja> から入手、または `nvm` 等で導入してください。
 
-### 2. このフォルダに移動
+---
+
+## 🚀 起動手順（3ステップ）
+
+### 1. プロジェクトフォルダへ移動
 ```bash
 cd shrines-temples-mock
 ```
 
-### 3. サーバー起動
-以下のどちらでもOKです:
+### 2. 依存パッケージをインストール
 ```bash
-node server.js
+npm install
 ```
-または
+→ `node_modules/` と `package-lock.json` が生成されます。
+
+### 3. サーバー起動
 ```bash
 npm start
 ```
+コンソールに以下が表示されればOKです:
+```
+==============================================
+  🏯  全国神社仏閣まとめ - モックサーバー起動
+==============================================
+  ローカルURL : http://localhost:3000/
+```
 
 ### 4. ブラウザでアクセス
-起動メッセージが出たら、以下のURLをクリック（またはコピーしてブラウザへ）:
 
-👉 **http://localhost:3000**
-
-### 停止
-ターミナルで `Ctrl + C`
+👉 **<http://localhost:3000/>** をクリック（またはコピペ）
 
 ---
 
-## 🔧 ポート変更
+## 🔌 提供エンドポイント
 
-3000番が使われている場合は環境変数 `PORT` で変えられます:
+| URL | 内容 |
+|---|---|
+| `/` | 添付HTML（`public/index.html`）を表示 |
+| `/api/health` | ヘルスチェック（JSON） |
+| `/api/ranking` | 総合ランキング上位（モック JSON） |
+| `/api/sns` | SNS指標（モック JSON） |
+| `/api/merch` | 物販在庫（モック JSON） |
+| `/api/next-update` | 次回更新時刻（深夜2:00 JST） |
 
+> モックAPIは将来HTMLを動的化する際の足掛かりです。現状の `index.html` は静的なのでAPIを呼ばなくても表示できます。
+
+---
+
+## ⚙ 任意設定
+
+### ポート番号を変える
 ```bash
-# macOS / Linux
-PORT=8080 node server.js
+# Mac / Linux
+PORT=8080 npm start
 
 # Windows (PowerShell)
-$env:PORT=8080; node server.js
+$env:PORT=8080; npm start
+```
 
-# Windows (コマンドプロンプト)
-set PORT=8080 && node server.js
+### ファイル更新で自動再起動（Node 18+）
+```bash
+npm run dev
+```
+`--watch` フラグで `server.js` 変更時に自動再起動します。
+
+---
+
+## 🐳（オプション）Dockerで動かす場合
+
+`Dockerfile` を作成:
+```dockerfile
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --omit=dev
+COPY . .
+EXPOSE 3000
+CMD ["node", "server.js"]
+```
+
+ビルド・実行:
+```bash
+docker build -t shrines-mock .
+docker run -p 3000:3000 shrines-mock
 ```
 
 ---
 
-## 📝 補足
+## 🌐（オプション）外部からアクセスできるようにする
 
-- HTMLは自己完結型（CSS・JSすべて埋め込み済み）なので、`public/index.html` を差し替えるだけで内容更新できます。
-- 画像やCSS等の追加ファイルが必要になった場合も `public/` 配下に置けば自動で配信されます。
-- 本番運用する場合は Express + helmet + compression 等の導入を推奨。
+- **同一LAN内の別端末から**: PC の IP（例: `192.168.1.10`）に対し `http://192.168.1.10:3000/` でアクセス
+- **インターネット公開（一時的）**: `ngrok` などのトンネリングツール
+  ```bash
+  npx ngrok http 3000
+  ```
+- **本番デプロイ**: Render / Railway / Fly.io / Vercel 等のホスティングへデプロイ（無料枠あり）
+
+---
+
+## 🧯 トラブル時
+
+| 症状 | 対処 |
+|---|---|
+| `EADDRINUSE` ポート使用中 | `PORT=8080 npm start` で別ポート指定 |
+| `command not found: npm` | Node.js が未インストール → 上の前提セクション参照 |
+| 画面が真っ白 | `public/index.html` が配置されているか確認 |
+| 文字化け | HTML が UTF-8 で保存されているか確認 |
+
+---
+
+## 📝 ライセンス
+
+MIT
