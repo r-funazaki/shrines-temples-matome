@@ -1,34 +1,31 @@
 // =====================================================
 //  全国神社仏閣まとめ - モックサーバー
-//  Node.js + Express による静的サイト + モックAPI配信
+//  Node.js + Express による静的配信 + モックAPI
 // =====================================================
 const express = require('express');
 const path = require('path');
+const { exec } = require('child_process');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || '0.0.0.0';
+const AUTO_OPEN = process.env.NO_OPEN !== '1';   // NO_OPEN=1 で自動オープン無効
 
-// ----- ログ用ミドルウェア（簡易） -----
+// ----- 簡易アクセスログ -----
 app.use((req, res, next) => {
-  const t = new Date().toISOString();
-  console.log(`[${t}] ${req.method} ${req.url}`);
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
   next();
 });
 
-// ----- 静的ファイル配信（public配下） -----
+// ----- 静的ファイル配信 -----
 app.use(express.static(path.join(__dirname, 'public'), {
   extensions: ['html'],
-  maxAge: '0'   // 開発用にキャッシュ無効
+  maxAge: 0
 }));
 
 // =====================================================
 //  モックAPI（将来の動的化用スタブ）
-//  HTML側のJSは現状ハードコード値で動きますが、
-//  必要に応じてこれらのエンドポイントから fetch する形に切替可能。
 // =====================================================
-
-// ヘルスチェック
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
@@ -38,7 +35,6 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// 総合ランキング（上位サンプル）
 app.get('/api/ranking', (req, res) => {
   res.json({
     updatedAt: new Date().toISOString(),
@@ -52,34 +48,31 @@ app.get('/api/ranking', (req, res) => {
   });
 });
 
-// SNS指標サンプル
 app.get('/api/sns', (req, res) => {
   res.json({
     updatedAt: new Date().toISOString(),
     accounts: [
-      { name: '伊勢神宮', instagram: 152000, x: 48000, tiktok: null },
-      { name: '出雲大社', instagram: 121000, x: 31000, tiktok: 18000 },
-      { name: '明治神宮', instagram: 98000,  x: 22000, tiktok: null },
-      { name: '伏見稲荷大社', instagram: 187000, x: 41000, tiktok: 9200 },
-      { name: '浅草寺', instagram: 9283, x: 3176, tiktok: null }
+      { name: '伊勢神宮',     instagram: 152000, x: 48000, tiktok: null  },
+      { name: '出雲大社',     instagram: 121000, x: 31000, tiktok: 18000 },
+      { name: '明治神宮',     instagram: 98000,  x: 22000, tiktok: null  },
+      { name: '伏見稲荷大社', instagram: 187000, x: 41000, tiktok: 9200  },
+      { name: '浅草寺',       instagram: 9283,   x: 3176,  tiktok: null  }
     ]
   });
 });
 
-// 物販在庫サンプル
 app.get('/api/merch', (req, res) => {
   res.json({
     updatedAt: new Date().toISOString(),
     items: [
-      { temple: '伊勢神宮', name: '神宮御札', price: 1000, stock: 'in_stock' },
-      { temple: '出雲大社', name: '縁結守', price: 800, stock: 'low' },
-      { temple: '明治神宮', name: '勝守', price: 1000, stock: 'in_stock' },
-      { temple: '伏見稲荷大社', name: 'きつね絵馬', price: 800, stock: 'in_stock' }
+      { temple: '伊勢神宮',     name: '神宮御札',  price: 1000, stock: 'in_stock' },
+      { temple: '出雲大社',     name: '縁結守',    price: 800,  stock: 'low'      },
+      { temple: '明治神宮',     name: '勝守',      price: 1000, stock: 'in_stock' },
+      { temple: '伏見稲荷大社', name: 'きつね絵馬', price: 800,  stock: 'in_stock' }
     ]
   });
 });
 
-// 次回更新時刻（深夜2:00 JST）
 app.get('/api/next-update', (req, res) => {
   const now = new Date();
   const next = new Date(now);
@@ -99,12 +92,22 @@ app.use((req, res) => {
 
 // ----- 起動 -----
 app.listen(PORT, HOST, () => {
+  const url = `http://localhost:${PORT}/`;
   console.log('==============================================');
   console.log('  🏯  全国神社仏閣まとめ - モックサーバー起動');
   console.log('==============================================');
-  console.log(`  ローカルURL : http://localhost:${PORT}/`);
-  console.log(`  API ヘルス  : http://localhost:${PORT}/api/health`);
-  console.log(`  API ランキング: http://localhost:${PORT}/api/ranking`);
-  console.log('  停止するには Ctrl + C を押してください');
+  console.log(`  👉 ブラウザでアクセス: ${url}`);
+  console.log(`     API ヘルス       : ${url}api/health`);
+  console.log(`     API ランキング   : ${url}api/ranking`);
+  console.log('  停止は Ctrl + C');
   console.log('==============================================');
+
+  // 起動時に既定ブラウザで自動オープン
+  if (AUTO_OPEN) {
+    const cmd =
+      process.platform === 'darwin' ? `open ${url}` :
+      process.platform === 'win32'  ? `start ${url}` :
+                                       `xdg-open ${url}`;
+    exec(cmd, (err) => { /* 失敗しても無視 */ });
+  }
 });

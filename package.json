@@ -7,10 +7,11 @@
     "start": "node server.js",
     "dev": "node --watch server.js"
   },
-  "keywords": ["mock", "express", "shrines", "temples"],
-  "author": "",
-  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "express": "^4.19.2"
-  }
+  },
+  "license": "MIT"
 }
