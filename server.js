@@ -39,11 +39,11 @@ app.get('/api/ranking', (req, res) => {
   res.json({
     updatedAt: new Date().toISOString(),
     items: [
-      { rank: 1, name: '伊勢神宮', prefecture: '三重', type: '神宮', score: 95.8 },
-      { rank: 2, name: '出雲大社', prefecture: '島根', type: '大社', score: 92.4 },
-      { rank: 3, name: '明治神宮', prefecture: '東京', type: '神宮', score: 91.7 },
+      { rank: 1, name: '伊勢神宮',     prefecture: '三重', type: '神宮', score: 95.8 },
+      { rank: 2, name: '出雲大社',     prefecture: '島根', type: '大社', score: 92.4 },
+      { rank: 3, name: '明治神宮',     prefecture: '東京', type: '神宮', score: 91.7 },
       { rank: 4, name: '伏見稲荷大社', prefecture: '京都', type: '大社', score: 90.3 },
-      { rank: 5, name: '成田山新勝寺', prefecture: '千葉', type: '寺', score: 89.6 }
+      { rank: 5, name: '成田山新勝寺', prefecture: '千葉', type: '寺',   score: 89.6 }
     ]
   });
 });
@@ -65,9 +65,9 @@ app.get('/api/merch', (req, res) => {
   res.json({
     updatedAt: new Date().toISOString(),
     items: [
-      { temple: '伊勢神宮',     name: '神宮御札',  price: 1000, stock: 'in_stock' },
-      { temple: '出雲大社',     name: '縁結守',    price: 800,  stock: 'low'      },
-      { temple: '明治神宮',     name: '勝守',      price: 1000, stock: 'in_stock' },
+      { temple: '伊勢神宮',     name: '神宮御札',   price: 1000, stock: 'in_stock' },
+      { temple: '出雲大社',     name: '縁結守',     price: 800,  stock: 'low'      },
+      { temple: '明治神宮',     name: '勝守',       price: 1000, stock: 'in_stock' },
       { temple: '伏見稲荷大社', name: 'きつね絵馬', price: 800,  stock: 'in_stock' }
     ]
   });
@@ -86,9 +86,7 @@ app.get('/api/next-update', (req, res) => {
 });
 
 // ----- 404 -----
-app.use((req, res) => {
-  res.status(404).send('404 Not Found');
-});
+app.use((req, res) => res.status(404).send('404 Not Found'));
 
 // ----- 起動 -----
 app.listen(PORT, HOST, () => {
@@ -102,12 +100,11 @@ app.listen(PORT, HOST, () => {
   console.log('  停止は Ctrl + C');
   console.log('==============================================');
 
-  // 起動時に既定ブラウザで自動オープン
   if (AUTO_OPEN) {
     const cmd =
       process.platform === 'darwin' ? `open ${url}` :
       process.platform === 'win32'  ? `start ${url}` :
                                        `xdg-open ${url}`;
-    exec(cmd, (err) => { /* 失敗しても無視 */ });
+    exec(cmd, () => { /* 失敗しても無視 */ });
   }
 });
