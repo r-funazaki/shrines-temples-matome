@@ -1,0 +1,15 @@
+{
+  "name": "shrines-temples-mock",
+  "version": "1.0.0",
+  "description": "全国神社仏閣まとめ モックサイト (Node.js)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev":   "node server.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "private": true,
+  "license": "UNLICENSED"
+}

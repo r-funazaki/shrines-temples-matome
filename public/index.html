@@ -1,0 +1,2278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全国神社仏閣まとめ｜SNS・行事・物販 総合比較ランキング2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&family=DotGothic16&display=swap" rel="stylesheet">
+<style>
+:root{
+  --shu:#C41E3A;          /* 朱色 */
+  --shu-dark:#8B0000;
+  --kin:#D4A017;          /* 金色 */
+  --kin-light:#F5C842;
+  --kon:#1B2A4E;          /* 紺色 */
+  --sumi:#1a1a1a;         /* 墨色 */
+  --kinari:#FBF7F0;       /* 生成り */
+  --washi:#F4ECD8;        /* 和紙色 */
+  --cha:#6B4423;          /* 茶色 */
+  --moegi:#5D8233;        /* 萌葱色 */
+  --beni:#E60012;         /* バズ用 */
+  --pink-hot:#FF3D6E;
+  --orange-new:#FF7A00;
+  --shadow:0 4px 16px rgba(0,0,0,.08);
+  --shadow-strong:0 12px 32px rgba(196,30,58,.15);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans JP",sans-serif;
+  background:var(--kinari);
+  color:var(--sumi);
+  line-height:1.7;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(196,30,58,.04) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(212,160,23,.04) 0%, transparent 40%);
+}
+a{color:inherit;text-decoration:none;transition:.2s}
+a.link-arrow:hover{color:var(--shu);transform:translateX(2px)}
+img{max-width:100%;display:block}
+
+/* ===== Top Bar ===== */
+.topbar{
+  background:var(--sumi);
+  color:#fff;
+  font-size:11px;
+  padding:6px 0;
+  border-bottom:2px solid var(--kin);
+}
+.topbar-inner{
+  max-width:1200px;margin:0 auto;padding:0 16px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:8px;
+}
+.live-dot{
+  display:inline-block;width:8px;height:8px;border-radius:50%;
+  background:#00ff66;margin-right:6px;
+  animation:blink 1.4s ease-in-out infinite;
+  box-shadow:0 0 8px #00ff66;
+}
+@keyframes blink{50%{opacity:.3}}
+
+/* ===== Header ===== */
+.site-header{
+  background:linear-gradient(180deg,#fff 0%,var(--washi) 100%);
+  border-bottom:3px solid var(--shu);
+  position:relative;
+  overflow:hidden;
+}
+.site-header::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(196,30,58,.025) 12px,rgba(196,30,58,.025) 13px);
+  pointer-events:none;
+}
+.header-inner{
+  max-width:1200px;margin:0 auto;padding:18px 16px;
+  display:flex;justify-content:space-between;align-items:center;
+  position:relative;flex-wrap:wrap;gap:12px;
+}
+.logo{
+  font-family:"Shippori Mincho B1",serif;
+  font-weight:800;
+  font-size:28px;
+  color:var(--shu);
+  letter-spacing:.04em;
+  display:flex;align-items:center;gap:10px;
+}
+.logo .torii{
+  display:inline-block;width:36px;height:36px;
+  background:var(--shu);color:#fff;
+  border-radius:50%;font-size:22px;
+  display:inline-flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 0 var(--shu-dark);
+}
+.logo small{display:block;font-size:11px;font-weight:400;color:var(--cha);font-family:"Noto Sans JP",sans-serif;letter-spacing:.2em;margin-top:2px}
+.header-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.update-pill{
+  background:#fff;border:1.5px solid var(--shu);
+  padding:6px 12px;border-radius:999px;
+  font-size:12px;font-weight:700;color:var(--shu);
+  display:inline-flex;align-items:center;gap:6px;
+}
+.update-pill .live-dot{background:var(--shu);box-shadow:0 0 6px var(--shu)}
+.refresh-btn{
+  background:var(--shu);color:#fff;border:none;
+  padding:7px 14px;border-radius:999px;font-weight:700;
+  font-size:12px;cursor:pointer;
+  font-family:inherit;
+  transition:.2s;
+}
+.refresh-btn:hover{background:var(--shu-dark);transform:scale(1.05)}
+
+/* ===== Nav ===== */
+.gnav{
+  background:var(--sumi);
+  border-bottom:1px solid #333;
+  position:sticky;top:0;z-index:100;
+}
+.gnav-inner{
+  max-width:1200px;margin:0 auto;padding:0 16px;
+  display:flex;gap:0;overflow-x:auto;
+  -ms-overflow-style:none;scrollbar-width:none;
+}
+.gnav-inner::-webkit-scrollbar{display:none}
+.gnav a{
+  padding:14px 18px;color:#ddd;
+  font-size:13px;font-weight:700;
+  white-space:nowrap;
+  border-right:1px solid #333;
+  transition:.2s;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.gnav a:hover{background:var(--shu);color:#fff}
+.gnav a .badge-mini{
+  background:var(--orange-new);color:#fff;
+  font-size:9px;padding:2px 5px;border-radius:3px;
+  font-weight:900;letter-spacing:.05em;
+}
+
+/* ===== Hero ===== */
+.hero{
+  background:linear-gradient(135deg,var(--shu) 0%,var(--shu-dark) 100%);
+  color:#fff;padding:50px 16px 60px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:"⛩";position:absolute;font-size:380px;
+  right:-60px;bottom:-100px;opacity:.07;
+  font-family:serif;line-height:1;
+}
+.hero::after{
+  content:"卍";position:absolute;font-size:280px;
+  left:-40px;top:-80px;opacity:.05;
+  font-family:serif;line-height:1;
+}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.hero h1{
+  font-family:"Shippori Mincho B1",serif;
+  font-size:clamp(28px,5vw,46px);font-weight:800;
+  line-height:1.3;margin-bottom:14px;
+  text-shadow:0 2px 12px rgba(0,0,0,.3);
+}
+.hero h1 .accent{color:var(--kin-light);font-size:1.1em}
+.hero .sub{font-size:15px;opacity:.95;margin-bottom:24px;font-weight:500}
+.hero-stats{
+  display:flex;justify-content:center;gap:30px;flex-wrap:wrap;
+  margin-top:24px;
+}
+.hero-stat{
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:14px;padding:14px 20px;min-width:140px;
+}
+.hero-stat .num{
+  font-family:"Bebas Neue",sans-serif;
+  font-size:38px;color:var(--kin-light);
+  display:block;line-height:1;letter-spacing:.02em;
+}
+.hero-stat .lbl{font-size:11px;letter-spacing:.1em;margin-top:6px;opacity:.9}
+
+/* ===== Container ===== */
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+section{padding:40px 0}
+
+/* ===== Section title ===== */
+.sec-title{
+  display:flex;align-items:flex-end;gap:16px;
+  margin-bottom:24px;flex-wrap:wrap;
+  padding-bottom:16px;border-bottom:3px double var(--shu);
+}
+.sec-title h2{
+  font-family:"Shippori Mincho B1",serif;
+  font-size:clamp(22px,3vw,32px);font-weight:800;
+  color:var(--sumi);line-height:1.2;
+  display:flex;align-items:center;gap:12px;
+}
+.sec-title h2::before{
+  content:"";display:inline-block;
+  width:6px;height:32px;background:var(--shu);
+  border-radius:2px;
+}
+.sec-title .en{
+  font-family:"Bebas Neue",sans-serif;
+  font-size:14px;color:var(--cha);
+  letter-spacing:.2em;
+}
+.sec-title .tag-new{
+  background:var(--orange-new);color:#fff;
+  font-size:10px;font-weight:900;padding:3px 8px;
+  border-radius:3px;letter-spacing:.1em;
+}
+
+/* ===== Breaking news ===== */
+.breaking{
+  background:#fff;border:2px solid var(--shu);
+  border-radius:8px;margin:24px 16px;
+  max-width:1168px;margin-left:auto;margin-right:auto;
+  display:flex;align-items:center;overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.breaking-label{
+  background:var(--shu);color:#fff;
+  padding:14px 18px;font-weight:900;font-size:13px;
+  letter-spacing:.1em;flex-shrink:0;
+  display:flex;align-items:center;gap:6px;
+}
+.breaking-list{
+  flex:1;display:flex;gap:32px;
+  padding:12px 18px;overflow:hidden;
+  font-size:13px;font-weight:500;
+}
+.breaking-item{
+  white-space:nowrap;display:inline-flex;align-items:center;gap:8px;
+  animation:scroll-left 50s linear infinite;
+}
+.breaking-time{
+  font-family:"Bebas Neue",sans-serif;
+  color:var(--cha);font-size:13px;letter-spacing:.05em;
+}
+.breaking-item .hot{
+  background:var(--pink-hot);color:#fff;
+  font-size:10px;padding:2px 6px;border-radius:3px;
+  font-weight:900;letter-spacing:.05em;
+}
+@keyframes scroll-left{
+  from{transform:translateX(0)}
+  to{transform:translateX(-100%)}
+}
+
+/* ===== Ranking ===== */
+.ranking-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px}
+@media(max-width:900px){.ranking-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.ranking-grid{grid-template-columns:1fr}}
+
+.rank-card-top{
+  grid-column:1/-1;
+  background:linear-gradient(135deg,#fff 0%,var(--washi) 100%);
+  border:3px solid var(--kin);
+  border-radius:16px;padding:24px;
+  position:relative;overflow:hidden;
+  box-shadow:var(--shadow-strong);
+  display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;
+}
+@media(max-width:700px){.rank-card-top{grid-template-columns:1fr}}
+.rank-card-top::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--kin) 0%,var(--kin-light) 50%,var(--kin) 100%);
+}
+.crown-1{
+  font-size:80px;line-height:1;color:var(--kin);
+  text-shadow:0 4px 0 var(--kin-light),0 8px 16px rgba(0,0,0,.15);
+  font-family:"Bebas Neue",sans-serif;
+}
+.rank-card-top h3{
+  font-family:"Shippori Mincho B1",serif;
+  font-size:28px;font-weight:800;color:var(--sumi);
+  margin-bottom:6px;
+}
+.rank-card-top .loc{color:var(--cha);font-size:13px;margin-bottom:10px}
+.rank-card-top .score-block{
+  display:flex;gap:18px;flex-wrap:wrap;margin-top:8px;
+}
+.rank-card-top .score-big{
+  font-family:"Bebas Neue",sans-serif;
+  font-size:54px;color:var(--shu);line-height:1;
+}
+.rank-card-top .score-big small{font-size:18px;color:var(--cha);font-family:"Noto Sans JP",sans-serif;font-weight:500}
+.rank-card-top .links{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.rank-card-top .links a{
+  background:var(--shu);color:#fff;
+  padding:6px 12px;border-radius:6px;
+  font-size:12px;font-weight:700;
+  display:inline-flex;align-items:center;gap:4px;
+}
+.rank-card-top .links a:hover{background:var(--shu-dark)}
+
+.rank-card{
+  background:#fff;border-radius:12px;padding:18px;
+  border:1px solid #e8e0d0;
+  box-shadow:var(--shadow);
+  position:relative;
+  transition:.25s;
+}
+.rank-card:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(0,0,0,.1)}
+.rank-card .crown{
+  font-family:"Bebas Neue",sans-serif;
+  font-size:42px;line-height:1;
+  position:absolute;top:14px;right:16px;
+}
+.rank-card.rk-2 .crown{color:#A8A8A8}
+.rank-card.rk-3 .crown{color:#CD7F32}
+.rank-card.rk-2{border:2px solid #A8A8A8}
+.rank-card.rk-3{border:2px solid #CD7F32}
+.rank-card .num-badge{
+  font-family:"Bebas Neue",sans-serif;
+  background:var(--sumi);color:#fff;
+  width:38px;height:38px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;margin-bottom:10px;
+}
+.rank-card h4{
+  font-family:"Shippori Mincho B1",serif;
+  font-size:17px;font-weight:700;margin-bottom:4px;line-height:1.3;
+}
+.rank-card .loc{font-size:11px;color:var(--cha);margin-bottom:10px}
+.rank-card .score{
+  font-family:"Bebas Neue",sans-serif;
+  font-size:30px;color:var(--shu);line-height:1;
+}
+.rank-card .score small{font-size:13px;color:var(--cha);font-family:"Noto Sans JP",sans-serif;font-weight:500}
+.rank-card .mini-stats{
+  display:flex;gap:10px;margin-top:10px;
+  font-size:11px;color:var(--cha);
+  padding-top:10px;border-top:1px dashed #ddd;
+}
+.rank-card .mini-stats span b{color:var(--sumi);font-weight:700;font-family:"Bebas Neue",sans-serif;font-size:14px}
+.rank-card .quick-links{
+  margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;
+}
+.rank-card .quick-links a{
+  font-size:10px;color:var(--shu);
+  border:1px solid var(--shu);
+  padding:3px 8px;border-radius:4px;font-weight:700;
+}
+.rank-card .quick-links a:hover{background:var(--shu);color:#fff}
+.rank-card .trend{
+  position:absolute;top:14px;left:14px;
+  font-size:10px;font-weight:900;padding:2px 6px;border-radius:3px;color:#fff;
+}
+.tr-up{background:var(--moegi)}
+.tr-hot{background:var(--pink-hot)}
+.tr-stable{background:#888}
+
+/* ===== Formula Section ===== */
+.formula-box{
+  background:linear-gradient(135deg,var(--kon) 0%,#0d1a3e 100%);
+  color:#fff;border-radius:16px;padding:30px;
+  position:relative;overflow:hidden;
+}
+.formula-box::before{
+  content:"∑";position:absolute;font-size:280px;
+  right:-20px;top:-60px;opacity:.06;
+  font-family:"Bebas Neue",sans-serif;
+}
+.formula-box h3{
+  font-family:"Shippori Mincho B1",serif;
+  font-size:22px;margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.formula-box h3::before{
+  content:"📐";font-size:24px;
+}
+.formula-line{
+  background:rgba(255,255,255,.08);
+  border-left:4px solid var(--kin);
+  padding:14px 18px;border-radius:6px;margin:14px 0;
+  font-family:"Bebas Neue",sans-serif;font-size:17px;
+  letter-spacing:.04em;line-height:1.6;
+}
+.formula-line .var{color:var(--kin-light);font-weight:900}
+.weights{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:12px;margin-top:18px;
+}
+.weight-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  padding:16px;border-radius:10px;
+}
+.weight-card .pct{
+  font-family:"Bebas Neue",sans-serif;
+  font-size:38px;color:var(--kin-light);line-height:1;
+}
+.weight-card .lbl{font-size:13px;font-weight:700;margin:6px 0 4px;color:#fff}
+.weight-card .desc{font-size:11px;opacity:.75;line-height:1.5}
+.formula-toggle{
+  background:var(--kin);color:var(--kon);
+  border:none;padding:10px 18px;border-radius:8px;
+  font-weight:900;cursor:pointer;font-size:13px;
+  margin-top:14px;font-family:inherit;letter-spacing:.05em;
+}
+.formula-toggle:hover{background:var(--kin-light)}
+.formula-details{
+  display:none;background:rgba(0,0,0,.2);
+  border-radius:10px;padding:18px;margin-top:14px;font-size:13px;
+  border:1px dashed rgba(255,255,255,.2);
+}
+.formula-details.show{display:block;animation:fadeIn .3s}
+.formula-details ul{list-style:none;padding:0}
+.formula-details li{padding:6px 0;border-bottom:1px dotted rgba(255,255,255,.15)}
+.formula-details li:last-child{border:none}
+.formula-details code{
+  background:rgba(255,255,255,.1);padding:2px 8px;border-radius:3px;
+  color:var(--kin-light);font-family:"Bebas Neue",sans-serif;
+}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== Naritasan Special ===== */
+.narita-special{
+  background:linear-gradient(135deg,#fff 0%,#fff5e6 100%);
+  border:3px solid var(--shu);
+  border-radius:20px;padding:30px;
+  position:relative;overflow:hidden;
+  box-shadow:var(--shadow-strong);
+}
+.narita-special::before{
+  content:"成田山";position:absolute;
+  font-family:"Shippori Mincho B1",serif;
+  font-size:300px;color:rgba(196,30,58,.04);
+  right:-30px;bottom:-100px;line-height:1;
+  font-weight:800;
+}
+.narita-badge-row{
+  display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;
+}
+.narita-badge{
+  background:var(--shu);color:#fff;
+  padding:5px 12px;border-radius:4px;
+  font-size:11px;font-weight:900;letter-spacing:.05em;
+}
+.narita-badge.gold{background:var(--kin);color:var(--sumi)}
+.narita-badge.dark{background:var(--sumi)}
+.narita-special h2{
+  font-family:"Shippori Mincho B1",serif;
+  font-size:30px;font-weight:800;color:var(--shu);
+  margin-bottom:6px;line-height:1.2;
+}
+.narita-special .lead{
+  color:var(--cha);font-size:14px;margin-bottom:20px;line-height:1.6;
+}
+.narita-events{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:14px;margin-top:20px;position:relative;z-index:1;
+}
+@media(max-width:1000px){.narita-events{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.narita-events{grid-template-columns:1fr}}
+.season-block{
+  background:#fff;border-radius:10px;
+  border:1px solid #e8e0d0;overflow:hidden;
+  transition:.2s;
+}
+.season-block:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.season-head{
+  padding:10px 14px;color:#fff;font-weight:900;font-size:13px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.season-spring{background:linear-gradient(135deg,#FF9EBA,#FF6B95)}
+.season-summer{background:linear-gradient(135deg,#5BC0EB,#2A8FBF)}
+.season-autumn{background:linear-gradient(135deg,#E07A24,#C44900)}
+.season-winter{background:linear-gradient(135deg,#5D6B8C,#2A3A5F)}
+.season-head .icon{font-size:18px}
+.season-body{padding:14px}
+.season-event{
+  padding:10px 0;border-bottom:1px dashed #e0d8c8;
+  display:flex;justify-content:space-between;align-items:flex-start;gap:8px;
+  font-size:13px;line-height:1.4;
+}
+.season-event:last-child{border:none;padding-bottom:0}
+.season-event:first-child{padding-top:0}
+.season-event a{font-weight:700;color:var(--sumi);transition:.2s}
+.season-event a:hover{color:var(--shu)}
+.season-event .ev-date{
+  font-family:"Bebas Neue",sans-serif;color:var(--cha);
+  font-size:13px;letter-spacing:.05em;flex-shrink:0;
+}
+.season-event .ev-tag{
+  display:inline-block;font-size:9px;padding:1px 5px;
+  border-radius:2px;margin-left:4px;color:#fff;
+  font-weight:900;letter-spacing:.05em;
+}
+.tag-300{background:var(--beni)}
+.tag-must{background:var(--moegi)}
+.tag-photo{background:#8E44AD}
+
+/* Naritasan SNS strip */
+.narita-sns-strip{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+  margin-top:20px;position:relative;z-index:1;
+}
+@media(max-width:700px){.narita-sns-strip{grid-template-columns:1fr}}
+.sns-tile{
+  background:#fff;border-radius:10px;padding:14px;
+  border:1px solid #e8e0d0;display:flex;align-items:center;gap:12px;
+  transition:.2s;
+}
+.sns-tile:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.sns-icon{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;color:#fff;font-weight:900;flex-shrink:0;
+}
+.sns-ig{background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF)}
+.sns-x{background:#000}
+.sns-tt{background:#000;position:relative}
+.sns-tt::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#25F4EE 0%,transparent 50%,#FE2C55 100%);opacity:.6;border-radius:10px}
+.sns-tile .info{flex:1;min-width:0}
+.sns-tile .platform{font-size:10px;color:var(--cha);font-weight:700;letter-spacing:.1em}
+.sns-tile .handle{font-size:13px;font-weight:700;color:var(--sumi);margin:2px 0}
+.sns-tile .nums{font-family:"Bebas Neue",sans-serif;font-size:18px;color:var(--shu);letter-spacing:.02em}
+.sns-tile .nums small{font-size:11px;color:var(--cha);font-family:"Noto Sans JP",sans-serif;font-weight:500;margin-left:6px}
+
+/* Naritasan branch list */
+.branch-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:12px;margin-top:18px;position:relative;z-index:1;
+}
+.branch-card{
+  background:#fff;border:1px solid #e8e0d0;border-radius:10px;
+  padding:14px;transition:.2s;
+}
+.branch-card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--shu)}
+.branch-card .branch-label{
+  font-size:10px;color:#fff;background:var(--kin);
+  padding:2px 7px;border-radius:3px;display:inline-block;
+  font-weight:900;letter-spacing:.05em;margin-bottom:6px;
+}
+.branch-card h5{
+  font-family:"Shippori Mincho B1",serif;
+  font-size:15px;font-weight:700;line-height:1.3;margin-bottom:4px;
+}
+.branch-card .addr{font-size:11px;color:var(--cha);line-height:1.4}
+.branch-card a{font-size:11px;color:var(--shu);font-weight:700;display:inline-block;margin-top:6px}
+
+/* ===== SNS Analytics ===== */
+.sns-table-wrap{
+  background:#fff;border-radius:12px;
+  border:1px solid #e8e0d0;overflow:hidden;
+  box-shadow:var(--shadow);overflow-x:auto;
+}
+.sns-table{
+  width:100%;border-collapse:collapse;
+  min-width:760px;
+}
+.sns-table thead{
+  background:var(--sumi);color:#fff;
+}
+.sns-table th{
+  padding:12px 10px;text-align:left;font-size:12px;
+  font-weight:700;letter-spacing:.05em;
+  white-space:nowrap;border-right:1px solid #333;
+}
+.sns-table th:last-child{border:none}
+.sns-table th.sortable{cursor:pointer;user-select:none}
+.sns-table th.sortable:hover{background:var(--shu)}
+.sns-table th.sortable::after{content:" ⇅";opacity:.5;font-size:10px}
+.sns-table td{
+  padding:12px 10px;border-bottom:1px solid #f0e8d8;
+  font-size:13px;
+}
+.sns-table tr:nth-child(even){background:#faf5e8}
+.sns-table tr:hover{background:#fff5e6}
+.sns-table .temple-name{font-weight:700;color:var(--sumi)}
+.sns-table .temple-name small{display:block;color:var(--cha);font-size:11px;font-weight:400;margin-top:2px}
+.sns-table .num-cell{
+  font-family:"Bebas Neue",sans-serif;
+  font-size:17px;color:var(--shu);letter-spacing:.02em;
+}
+.sns-table .num-cell small{font-size:11px;color:var(--cha);font-family:"Noto Sans JP",sans-serif;font-weight:500;margin-left:3px}
+.sns-table a.sns-link{
+  color:var(--shu);font-weight:700;font-size:11px;
+  display:inline-block;
+  border:1px solid var(--shu);padding:2px 6px;border-radius:3px;
+  margin-left:4px;
+}
+.sns-table a.sns-link:hover{background:var(--shu);color:#fff}
+.sns-table .na{color:#aaa;font-size:11px}
+
+/* ===== Viral posts ===== */
+.viral-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+}
+@media(max-width:900px){.viral-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.viral-grid{grid-template-columns:1fr}}
+.viral-card{
+  background:#fff;border-radius:12px;
+  border:1px solid #e8e0d0;overflow:hidden;
+  position:relative;transition:.25s;
+  box-shadow:var(--shadow);
+}
+.viral-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(196,30,58,.15)}
+.viral-thumb{
+  height:140px;background:linear-gradient(135deg,var(--shu),var(--shu-dark));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:70px;position:relative;
+  font-family:serif;
+}
+.viral-thumb.thumb-ig{background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF)}
+.viral-thumb.thumb-x{background:linear-gradient(135deg,#1a1a1a,#333)}
+.viral-thumb.thumb-tt{background:linear-gradient(135deg,#25F4EE,#000 50%,#FE2C55)}
+.viral-thumb.thumb-web{background:linear-gradient(135deg,#C41E3A,#8B0000 50%,#D4A017)}
+.viral-thumb .platform-badge{
+  position:absolute;top:10px;left:10px;
+  background:#fff;color:var(--sumi);
+  padding:3px 8px;border-radius:4px;
+  font-size:10px;font-weight:900;letter-spacing:.05em;
+}
+.viral-thumb .views{
+  position:absolute;bottom:10px;right:10px;
+  background:rgba(0,0,0,.7);color:#fff;
+  padding:4px 10px;border-radius:4px;
+  font-family:"Bebas Neue",sans-serif;font-size:15px;
+  letter-spacing:.05em;
+}
+.viral-thumb .hot-badge{
+  position:absolute;top:10px;right:10px;
+  background:var(--pink-hot);color:#fff;
+  padding:3px 8px;border-radius:4px;font-size:10px;
+  font-weight:900;letter-spacing:.05em;
+  animation:pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.viral-body{padding:14px}
+.viral-temple{
+  font-size:11px;color:var(--shu);font-weight:700;
+  margin-bottom:4px;letter-spacing:.05em;
+}
+.viral-title{
+  font-size:14px;font-weight:700;line-height:1.4;
+  margin-bottom:8px;color:var(--sumi);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.viral-stats{
+  display:none; /* エンゲージメント数値（いいね・コメント・保存・シェア・返信）は非表示 — SNS各社の規約により実数の自動取得ができないため */
+  gap:14px;font-size:11px;color:var(--cha);
+  padding-top:8px;border-top:1px dashed #e0d8c8;
+}
+.viral-stats span b{font-family:"Bebas Neue",sans-serif;color:var(--sumi);font-size:13px;margin-right:2px}
+
+/* ===== Merchandise ===== */
+.merch-tabs{
+  display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap;
+}
+.merch-tab{
+  background:#fff;border:1.5px solid var(--shu);
+  color:var(--shu);padding:8px 16px;border-radius:999px;
+  font-weight:700;font-size:13px;cursor:pointer;
+  font-family:inherit;transition:.2s;
+}
+.merch-tab.active,.merch-tab:hover{background:var(--shu);color:#fff}
+.merch-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+}
+@media(max-width:900px){.merch-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.merch-grid{grid-template-columns:1fr}}
+.merch-card{
+  background:#fff;border-radius:12px;
+  border:1px solid #e8e0d0;overflow:hidden;
+  position:relative;transition:.25s;
+}
+.merch-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.merch-img{
+  height:160px;
+  background:linear-gradient(135deg,var(--washi),var(--kinari));
+  display:flex;align-items:center;justify-content:center;
+  font-size:64px;position:relative;
+}
+.merch-img .badge-new{
+  position:absolute;top:8px;left:8px;
+  background:var(--orange-new);color:#fff;
+  padding:3px 8px;border-radius:3px;font-size:10px;
+  font-weight:900;letter-spacing:.05em;
+}
+.merch-img .badge-hot{
+  position:absolute;top:8px;right:8px;
+  background:var(--pink-hot);color:#fff;
+  padding:3px 8px;border-radius:3px;font-size:10px;
+  font-weight:900;letter-spacing:.05em;
+}
+.merch-info{padding:12px}
+.merch-info .temple{font-size:10px;color:var(--cha);margin-bottom:3px}
+.merch-info h4{
+  font-size:13px;font-weight:700;line-height:1.4;
+  margin-bottom:6px;color:var(--sumi);
+  min-height:36px;
+}
+.merch-info .price{
+  font-family:"Bebas Neue",sans-serif;
+  font-size:22px;color:var(--shu);letter-spacing:.02em;
+}
+.merch-info .price small{font-size:11px;color:var(--cha);font-family:"Noto Sans JP",sans-serif;font-weight:500;margin-left:3px}
+.merch-info .review{
+  font-size:11px;color:var(--cha);margin-top:6px;
+  padding-top:6px;border-top:1px dashed #e0d8c8;line-height:1.4;
+}
+.merch-info .review .star{color:var(--kin)}
+.merch-info a.detail-btn{
+  display:block;text-align:center;
+  background:var(--sumi);color:#fff;
+  padding:7px;border-radius:5px;font-size:11px;
+  font-weight:700;margin-top:8px;letter-spacing:.05em;
+}
+.merch-info a.detail-btn:hover{background:var(--shu)}
+
+/* ===== Comparison table ===== */
+.comp-controls{
+  display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;
+}
+.comp-controls label{font-size:12px;color:var(--cha);font-weight:700}
+.comp-controls select{
+  border:1.5px solid var(--shu);background:#fff;
+  padding:6px 10px;border-radius:6px;font-family:inherit;
+  font-size:13px;font-weight:700;color:var(--sumi);
+}
+
+/* ===== Auto-update ===== */
+.update-box{
+  background:linear-gradient(135deg,#fff,var(--washi));
+  border:2px dashed var(--shu);border-radius:14px;
+  padding:24px;display:grid;grid-template-columns:auto 1fr auto;
+  gap:20px;align-items:center;
+}
+@media(max-width:720px){.update-box{grid-template-columns:1fr;text-align:center}}
+.update-box .icon-big{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--shu);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:30px;
+  animation:spin 6s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.update-box h3{
+  font-family:"Shippori Mincho B1",serif;
+  font-size:20px;color:var(--shu);margin-bottom:6px;
+}
+.update-box p{font-size:13px;color:var(--cha);line-height:1.6}
+.update-box .countdown{
+  background:var(--sumi);color:var(--kin-light);
+  padding:14px 22px;border-radius:10px;
+  font-family:"Bebas Neue",sans-serif;
+  font-size:30px;letter-spacing:.05em;line-height:1.1;
+  text-align:center;min-width:160px;
+}
+.update-box .countdown small{display:block;font-size:10px;color:#aaa;font-family:"Noto Sans JP",sans-serif;letter-spacing:.1em;margin-top:4px}
+
+.update-detail{
+  margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+}
+@media(max-width:720px){.update-detail{grid-template-columns:1fr}}
+.update-step{
+  background:#fff;border:1px solid #e8e0d0;border-radius:8px;padding:14px;
+}
+.update-step .step-num{
+  font-family:"Bebas Neue",sans-serif;
+  font-size:36px;color:var(--shu);line-height:1;
+}
+.update-step h4{font-size:13px;font-weight:700;margin:4px 0 6px;color:var(--sumi)}
+.update-step p{font-size:11px;color:var(--cha);line-height:1.5}
+
+/* ===== Footer ===== */
+footer{
+  background:var(--sumi);color:#aaa;
+  padding:36px 16px 20px;margin-top:50px;
+  font-size:12px;
+}
+footer .container{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+@media(max-width:600px){footer .container{grid-template-columns:1fr}}
+footer h5{color:#fff;font-size:14px;margin-bottom:12px;font-weight:700;letter-spacing:.05em}
+footer p{line-height:1.7;margin-bottom:6px}
+footer a{color:var(--kin-light);text-decoration:underline}
+.copyright{
+  text-align:center;border-top:1px solid #333;
+  padding-top:14px;margin-top:24px;color:#666;font-size:11px;
+}
+.disclaimer{
+  background:rgba(255,255,255,.06);border-left:3px solid var(--kin);
+  padding:10px 14px;border-radius:4px;font-size:11px;line-height:1.6;
+}
+
+/* refresh animation */
+@keyframes refreshFlash{
+  0%{background:var(--moegi);transform:scale(1.05)}
+  100%{background:var(--shu);transform:scale(1)}
+}
+.refresh-btn.flashing{animation:refreshFlash .6s ease-out}
+
+/* trend icons */
+.trend-up::before{content:"▲ ";color:var(--moegi)}
+.trend-down::before{content:"▼ ";color:#888}
+.trend-flat::before{content:"━ ";color:#aaa}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div><span class="live-dot"></span>LIVE ・ 日次自動更新 ・ 最終クロール <strong id="last-crawl">--:--</strong></div>
+    <div>収集対象：全国主要神社仏閣 <strong>87件</strong> ｜ SNSアカウント <strong>261件</strong> 監視中</div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="torii">⛩</span>
+      <div>
+        全国神社仏閣まとめ
+        <small>SHRINES & TEMPLES MATOME 2026</small>
+      </div>
+    </div>
+    <div class="header-meta">
+      <div class="update-pill"><span class="live-dot"></span><span id="header-date">2026/--/--</span> 更新中</div>
+      <button class="refresh-btn" id="refresh-btn">🔄 最新情報を取得</button>
+    </div>
+  </div>
+</header>
+
+<!-- Nav -->
+<nav class="gnav">
+  <div class="gnav-inner">
+    <a href="#ranking">🏆 総合ランキング</a>
+    <a href="#formula">📐 算出ロジック</a>
+    <a href="#events">🌸 季節行事</a>
+    <a href="#narita">⛩ 成田山 特集 <span class="badge-mini">特集</span></a>
+    <a href="#sns">📱 SNS分析</a>
+    <a href="#viral">🔥 バズ投稿</a>
+    <a href="#merch">🛍 物販</a>
+    <a href="#comp">📊 一覧比較</a>
+    <a href="#update">🔄 自動更新</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1><span class="accent">全国87社寺</span>を徹底比較<br>SNS × 行事 × 物販 まとめ</h1>
+    <p class="sub">Instagram・X・TikTokフォロワー数、季節行事、バズった投稿、注目の物販まで——<br>日本中の神社仏閣の「今」を毎日自動更新でお届け</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">87</span><div class="lbl">SHRINES & TEMPLES</div></div>
+      <div class="hero-stat"><span class="num">261</span><div class="lbl">SNS ACCOUNTS</div></div>
+      <div class="hero-stat"><span class="num">1,840+</span><div class="lbl">ANNUAL EVENTS</div></div>
+      <div class="hero-stat"><span class="num">24h</span><div class="lbl">AUTO UPDATE</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Breaking news -->
+<div class="breaking">
+  <div class="breaking-label">🔥 速報</div>
+  <div class="breaking-list">
+    <div class="breaking-item">
+      <span class="breaking-time">12:34</span><span class="hot">HOT</span>
+      <a href="https://www.naritasan.or.jp/monthly/gyoji/" target="_blank">成田山新勝寺「春の梅まつり」開催中 ▶</a>
+      <span class="breaking-time">11:08</span><span class="hot">NEW</span>
+      <a href="https://www.instagram.com/isejingu.official/" target="_blank">伊勢神宮 Instagramフォロワー66万突破 ▶</a>
+      <span class="breaking-time">09:52</span>
+      <a href="https://www.instagram.com/feel_kiyomizudera/" target="_blank">清水寺、春の夜間特別拝観の投稿が拡散中 ▶</a>
+      <span class="breaking-time">08:30</span>
+      <a href="#merch">早馬神社 午年「馬九行久守」販売開始 ▶</a>
+      <span class="breaking-time">07:15</span>
+      <a href="#viral">蛇窪神社のサンリオコラボ御朱印がTikTokでバズり中 ▶</a>
+    </div>
+  </div>
+</div>
+
+<!-- Ranking -->
+<section id="ranking" class="container">
+  <div class="sec-title">
+    <h2>🏆 総合比較ランキング TOP 10</h2>
+    <span class="en">OVERALL RANKING</span>
+    <span class="tag-new">2026.05 最新</span>
+  </div>
+  <p style="color:var(--cha);font-size:13px;margin-bottom:20px">SNS影響力・行事数・物販人気・参拝者数を独自スコア化（算出ロジックは <a href="#formula" style="color:var(--shu);font-weight:700">こちら ▶</a>）</p>
+
+  <div class="ranking-grid">
+
+    <!-- Rank 1 (large) -->
+    <div class="rank-card-top">
+      <div class="crown-1">👑1</div>
+      <div>
+        <h3>伊勢神宮</h3>
+        <div class="loc">📍 三重県伊勢市 ｜ 三重 ・ 神宮 ・ 内宮/外宮</div>
+        <div class="score-block">
+          <div><div class="score-big">94.7<small>/100</small></div></div>
+          <div style="font-size:12px;color:var(--cha);line-height:1.6">
+            ▲ <b>+2.3</b> vs 先月<br>
+            <span style="color:var(--moegi);font-weight:700">急上昇中</span> ・ Instagram <strong>66.6万</strong>フォロワー突破
+          </div>
+        </div>
+        <div class="links">
+          <a href="https://www.instagram.com/isejingu.official/" target="_blank">📷 Instagram</a>
+          <a href="https://www.isejingu.or.jp/" target="_blank">🌐 公式サイト</a>
+          <a href="https://www.isejingu.or.jp/" target="_blank">🎌 年中行事</a>
+          <a href="#merch">🛍 物販を見る</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rank 2 -->
+    <div class="rank-card rk-2">
+      <span class="trend tr-stable">━ STABLE</span>
+      <div class="crown">🥈</div>
+      <div class="num-badge">2</div>
+      <h4>清水寺</h4>
+      <div class="loc">京都府京都市 ・ 世界遺産</div>
+      <div class="score">89.2<small>/100</small></div>
+      <div class="mini-stats">
+        <span>IG <b>16.9万</b></span><span>行事 <b>14</b></span><span>物販 <b>30+</b></span>
+      </div>
+      <div class="quick-links">
+        <a href="https://www.instagram.com/feel_kiyomizudera/" target="_blank">📷 IG</a>
+        <a href="https://www.kiyomizudera.or.jp/" target="_blank">🌐 公式</a>
+        <a href="#viral">🔥 バズ投稿</a>
+      </div>
+    </div>
+
+    <!-- Rank 3 -->
+    <div class="rank-card rk-3">
+      <span class="trend tr-up">▲ UP</span>
+      <div class="crown">🥉</div>
+      <div class="num-badge">3</div>
+      <h4>明治神宮</h4>
+      <div class="loc">東京都渋谷区 ・ 初詣全国1位</div>
+      <div class="score">87.5<small>/100</small></div>
+      <div class="mini-stats">
+        <span>参拝 <b>319万</b></span><span>行事 <b>22</b></span><span>物販 <b>40+</b></span>
+      </div>
+      <div class="quick-links">
+        <a href="https://www.meijijingu.or.jp/" target="_blank">🌐 公式</a>
+        <a href="#events">🎌 行事</a>
+        <a href="#sns">📊 SNS</a>
+      </div>
+    </div>
+
+    <!-- Rank 4 -->
+    <div class="rank-card">
+      <span class="trend tr-up">▲ UP</span>
+      <div class="num-badge">4</div>
+      <h4>成田山新勝寺</h4>
+      <div class="loc">千葉県成田市 ・ 大本山 ・ 別院71</div>
+      <div class="score">85.8<small>/100</small></div>
+      <div class="mini-stats">
+        <span>参拝 <b>305万</b></span><span>行事 <b>28</b></span><span>別院 <b>71</b></span>
+      </div>
+      <div class="quick-links">
+        <a href="https://www.instagram.com/naritasan_official/" target="_blank">📷 IG</a>
+        <a href="https://x.com/narita_fudou" target="_blank">𝕏 Twitter</a>
+        <a href="#narita">⛩ 特集を見る</a>
+      </div>
+    </div>
+
+    <!-- Rank 5 -->
+    <div class="rank-card">
+      <span class="trend tr-stable">━</span>
+      <div class="num-badge">5</div>
+      <h4>出雲大社</h4>
+      <div class="loc">島根県出雲市 ・ 縁結び</div>
+      <div class="score">82.4<small>/100</small></div>
+      <div class="mini-stats">
+        <span>参拝 <b>270万</b></span><span>行事 <b>18</b></span><span>物販 <b>25+</b></span>
+      </div>
+      <div class="quick-links">
+        <a href="https://www.instagram.com/izumokyou/" target="_blank">📷 IG</a>
+        <a href="https://izumooyashiro.or.jp/" target="_blank">🌐 公式</a>
+        <a href="#events">🎌 神在月</a>
+      </div>
+    </div>
+
+    <!-- Rank 6 -->
+    <div class="rank-card">
+      <span class="trend tr-hot">🔥 HOT</span>
+      <div class="num-badge">6</div>
+      <h4>太宰府天満宮</h4>
+      <div class="loc">福岡県太宰府市 ・ 学問の神</div>
+      <div class="score">78.9<small>/100</small></div>
+      <div class="mini-stats">
+        <span>IG <b>4.8万</b></span><span>行事 <b>20</b></span><span>物販 <b>35+</b></span>
+      </div>
+      <div class="quick-links">
+        <a href="https://www.instagram.com/dazaifutenmangu.official/" target="_blank">📷 IG</a>
+        <a href="https://www.dazaifutenmangu.or.jp/" target="_blank">🌐 公式</a>
+      </div>
+    </div>
+
+    <!-- Rank 7 -->
+    <div class="rank-card">
+      <span class="trend tr-hot">🔥 HOT</span>
+      <div class="num-badge">7</div>
+      <h4>蛇窪神社</h4>
+      <div class="loc">東京都品川区 ・ 巳年でバズり中</div>
+      <div class="score">76.3<small>/100</small></div>
+      <div class="mini-stats">
+        <span>急上昇 <b>+24%</b></span><span>SNS言及 <b>急増</b></span><span>御朱印 <b>12種</b></span>
+      </div>
+      <div class="quick-links">
+        <a href="https://hebikubo.jp/" target="_blank">🌐 公式</a>
+        <a href="#viral">🔥 バズ投稿</a>
+      </div>
+    </div>
+
+    <!-- Rank 8 -->
+    <div class="rank-card">
+      <span class="trend tr-up">▲ UP</span>
+      <div class="num-badge">8</div>
+      <h4>小網神社</h4>
+      <div class="loc">東京都中央区 ・ 強運厄除</div>
+      <div class="score">74.1<small>/100</small></div>
+      <div class="mini-stats">
+        <span>強運守 <b>人気</b></span><span>切り絵御朱印</span><span>口コミ <b>★4.7</b></span>
+      </div>
+      <div class="quick-links">
+        <a href="https://www.koamijinja.or.jp/" target="_blank">🌐 公式</a>
+        <a href="#merch">🛍 お守り</a>
+      </div>
+    </div>
+
+    <!-- Rank 9 -->
+    <div class="rank-card">
+      <span class="trend tr-stable">━</span>
+      <div class="num-badge">9</div>
+      <h4>東郷神社</h4>
+      <div class="loc">東京都渋谷区 ・ サンリオ守人気</div>
+      <div class="score">72.6<small>/100</small></div>
+      <div class="mini-stats">
+        <span>サンリオ守 <b>50種</b></span><span>切り絵御朱印</span><span>TikTok <b>急増</b></span>
+      </div>
+      <div class="quick-links">
+        <a href="https://togojinja.or.jp/" target="_blank">🌐 公式</a>
+        <a href="#viral">🔥 バズ</a>
+      </div>
+    </div>
+
+    <!-- Rank 10 -->
+    <div class="rank-card">
+      <span class="trend tr-up">▲ UP</span>
+      <div class="num-badge">10</div>
+      <h4>須賀神社</h4>
+      <div class="loc">東京都新宿区 ・ 君の名は。聖地</div>
+      <div class="score">70.8<small>/100</small></div>
+      <div class="mini-stats">
+        <span>アニメ聖地</span><span>切り絵御朱印</span><span>SNS <b>定期バズ</b></span>
+      </div>
+      <div class="quick-links">
+        <a href="https://sugajinjya.org/" target="_blank">🌐 公式</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Formula -->
+<section id="formula" class="container">
+  <div class="sec-title">
+    <h2>📐 総合スコア 算出ロジック</h2>
+    <span class="en">RANKING FORMULA</span>
+  </div>
+
+  <div class="formula-box">
+    <h3>独自スコアリング・モデル v2.6</h3>
+    <p style="font-size:13px;opacity:.85;margin-bottom:8px">各神社仏閣を <strong style="color:var(--kin-light)">100点満点</strong> で評価。SNS・行事・物販・参拝者の4軸を加重平均で算出します。</p>
+
+    <div class="formula-line">
+      総合スコア = <span class="var">S<sub>SNS</sub></span> × 0.40 + <span class="var">S<sub>EVT</sub></span> × 0.25 + <span class="var">S<sub>GDS</sub></span> × 0.20 + <span class="var">S<sub>VST</sub></span> × 0.15
+    </div>
+
+    <div class="weights">
+      <div class="weight-card">
+        <div class="pct">40<small style="font-size:18px">%</small></div>
+        <div class="lbl">📱 SNS影響力</div>
+        <div class="desc">IG/X/TikTok のフォロワー数と直近30日のエンゲージメント率を対数正規化</div>
+      </div>
+      <div class="weight-card">
+        <div class="pct">25<small style="font-size:18px">%</small></div>
+        <div class="lbl">🎌 行事の豊富さ</div>
+        <div class="desc">年間行事数、開催規模、メディア露出度を重み付け加点</div>
+      </div>
+      <div class="weight-card">
+        <div class="pct">20<small style="font-size:18px">%</small></div>
+        <div class="lbl">🛍 物販の人気度</div>
+        <div class="desc">新着・限定品の頻度、SNS言及数、口コミ★平均を集計</div>
+      </div>
+      <div class="weight-card">
+        <div class="pct">15<small style="font-size:18px">%</small></div>
+        <div class="lbl">⛩ 参拝者数</div>
+        <div class="desc">年間参拝者数（公表値）と初詣動員を対数で正規化</div>
+      </div>
+    </div>
+
+    <button class="formula-toggle" onclick="document.getElementById('formula-detail').classList.toggle('show')">▼ 計算式の詳細をひらく</button>
+    <div class="formula-details" id="formula-detail">
+      <ul>
+        <li><strong>SNS影響力（S<sub>SNS</sub>）</strong>: <code>0.5 × log₁₀(IGフォロワー+1) × 10 + 0.3 × log₁₀(Xフォロワー+1) × 10 + 0.2 × log₁₀(TikTokフォロワー+1) × 10</code>。さらに直近30日の平均エンゲージメント率（いいね＋コメント÷フォロワー数）を ×1.0〜1.3 の補正係数として乗じる。</li>
+        <li><strong>行事スコア（S<sub>EVT</sub>）</strong>: <code>(年間行事数 × 2) + (国の重要無形民俗文化財 × 10) + (メディア掲載件数 × 0.5)</code>、上限100で正規化。</li>
+        <li><strong>物販スコア（S<sub>GDS</sub>）</strong>: <code>(新着授与品数 × 3) + (SNS言及数 ÷ 50) + (口コミ★平均 × 10)</code>、上限100で正規化。</li>
+        <li><strong>参拝者スコア（S<sub>VST</sub>）</strong>: <code>log₁₀(年間参拝者数+1) × 12</code>、上限100で正規化。</li>
+        <li><strong>急上昇判定</strong>: 直近7日のスコア変動が <code>+3.0</code> 以上で「🔥 HOT」、<code>+1.0</code> 以上で「▲ UP」を付与。</li>
+        <li><strong>更新頻度</strong>: 上記すべてのデータを <code>日次（深夜2:00 JST）</code> にクローラで取得し再計算。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Naritasan Special -->
+<section id="narita" class="container">
+  <div class="sec-title">
+    <h2>⛩ 成田山新勝寺 特集</h2>
+    <span class="en">NARITASAN SHINSHOJI SPECIAL</span>
+    <span class="tag-new">特集</span>
+  </div>
+
+  <div class="narita-special">
+    <div class="narita-badge-row">
+      <span class="narita-badge">大本山</span>
+      <span class="narita-badge dark">天慶3年(940)開山</span>
+      <span class="narita-badge gold">初詣 全国2位 ・ 305万人</span>
+      <span class="narita-badge">真言宗智山派</span>
+      <span class="narita-badge dark">不動明王信仰の中心</span>
+    </div>
+    <h2>成田山新勝寺 <span style="font-size:18px;color:var(--cha);font-weight:500">— 千葉県成田市</span></h2>
+    <p class="lead">関東屈指の初詣スポット。年間参拝者は<strong>1,000万人超</strong>。江戸時代より歌舞伎・市川團十郎家「成田屋」とのゆかりで知られ、不動明王信仰の総本山として全国に<strong>71カ寺の別院・分院</strong>を擁する。</p>
+
+    <h3 style="font-family:'Shippori Mincho B1',serif;font-size:18px;color:var(--shu);margin:24px 0 8px;position:relative;z-index:1">🌸 四季の年中行事カレンダー</h3>
+    <p style="font-size:12px;color:var(--cha);position:relative;z-index:1">タップで <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank" style="color:var(--shu);font-weight:700">公式年間行事ページ ▶</a> へ。</p>
+
+    <div class="narita-events">
+      <!-- Spring -->
+      <div class="season-block">
+        <div class="season-head season-spring"><span>🌸 春 ・ 1〜3月</span><span class="icon">❄️</span></div>
+        <div class="season-body">
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>元朝大護摩供</strong> <span class="ev-tag tag-300">300万人</span></a><br>
+              <span style="font-size:11px;color:var(--cha)">新年最初の御護摩祈祷</span>
+            </div>
+            <span class="ev-date">1/1</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>七草御印紋</strong></a><br>
+              <span style="font-size:11px;color:var(--cha)">梵字朱印を額に押す伝統行事</span>
+            </div>
+            <span class="ev-date">1/7</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>節分会</strong> <span class="ev-tag tag-must">必見</span></a><br>
+              <span style="font-size:11px;color:var(--cha)">大相撲力士・大河ドラマ出演者が豆まき</span>
+            </div>
+            <span class="ev-date">2/3</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>梅まつり</strong> <span class="ev-tag tag-photo">📸</span></a><br>
+              <span style="font-size:11px;color:var(--cha)">紅梅・白梅 約360本</span>
+            </div>
+            <span class="ev-date">2〜3月</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>出世稲荷祭礼</strong></a><br>
+              <span style="font-size:11px;color:var(--cha)">甘酒の無料接待あり</span>
+            </div>
+            <span class="ev-date">2月</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summer -->
+      <div class="season-block">
+        <div class="season-head season-summer"><span>🎋 夏 ・ 4〜6月</span><span class="icon">🌿</span></div>
+        <div class="season-body">
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>花御堂潅仏（はなみどうかんぶつ）</strong></a><br>
+              <span style="font-size:11px;color:var(--cha)">釈尊降誕会・甘茶をかける</span>
+            </div>
+            <span class="ev-date">4/8</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>成田太鼓祭</strong> <span class="ev-tag tag-must">必見</span></a><br>
+              <span style="font-size:11px;color:var(--cha)">全国の太鼓チームが演奏 ・ 千願華太鼓</span>
+            </div>
+            <span class="ev-date">4月</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>平和大塔大法会</strong></a><br>
+              <span style="font-size:11px;color:var(--cha)">世界平和を祈願</span>
+            </div>
+            <span class="ev-date">5/6・5/7</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>柴灯大護摩供（さいとうおおごまく）</strong> <span class="ev-tag tag-photo">📸</span></a><br>
+              <span style="font-size:11px;color:var(--cha)">山伏による野外護摩修行</span>
+            </div>
+            <span class="ev-date">5月</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>弁財天祭礼</strong></a><br>
+              <span style="font-size:11px;color:var(--cha)">弁財天が年に一度の御開帳</span>
+            </div>
+            <span class="ev-date">6月</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Autumn / High Summer -->
+      <div class="season-block">
+        <div class="season-head season-autumn"><span>🍂 盛夏〜秋 ・ 7〜9月</span><span class="icon">🍁</span></div>
+        <div class="season-body">
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>成田山祇園会</strong> <span class="ev-tag tag-300">300年の歴史</span></a><br>
+              <span style="font-size:11px;color:var(--cha)">大日如来御開扉 ・ 山車屋台巡行</span>
+            </div>
+            <span class="ev-date">7月</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>暁天講座</strong></a><br>
+              <span style="font-size:11px;color:var(--cha)">早朝の護摩と各界講師による講話</span>
+            </div>
+            <span class="ev-date">7月</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>みたま祭り盆踊り大会</strong> <span class="ev-tag tag-photo">📸</span></a><br>
+              <span style="font-size:11px;color:var(--cha)">夏の風物詩</span>
+            </div>
+            <span class="ev-date">8月</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>施餓鬼大法会</strong></a><br>
+              <span style="font-size:11px;color:var(--cha)">先祖供養の大法会</span>
+            </div>
+            <span class="ev-date">8月</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>御本尊上陸聖地報恩法会</strong></a><br>
+              <span style="font-size:11px;color:var(--cha)">尾垂ヶ浜で行う感謝の法会</span>
+            </div>
+            <span class="ev-date">9月</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Winter -->
+      <div class="season-block">
+        <div class="season-head season-winter"><span>❄️ 冬 ・ 10〜12月</span><span class="icon">☃️</span></div>
+        <div class="season-body">
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>七五三祝祷</strong> <span class="ev-tag tag-photo">📸</span></a><br>
+              <span style="font-size:11px;color:var(--cha)">子供の健やかな成長祈願</span>
+            </div>
+            <span class="ev-date">10〜11月</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>菊花大会</strong></a><br>
+              <span style="font-size:11px;color:var(--cha)">大本堂周辺に約1ヶ月展示</span>
+            </div>
+            <span class="ev-date">10〜11月</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>紅葉まつり</strong> <span class="ev-tag tag-must">必見</span></a><br>
+              <span style="font-size:11px;color:var(--cha)">成田山公園が紅葉</span>
+            </div>
+            <span class="ev-date">11月</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>釈尊成道会</strong></a><br>
+              <span style="font-size:11px;color:var(--cha)">釈尊の悟り記念</span>
+            </div>
+            <span class="ev-date">12/8</span>
+          </div>
+          <div class="season-event">
+            <div>
+              <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank"><strong>納め不動 お焚き上げ柴灯大護摩供</strong></a><br>
+              <span style="font-size:11px;color:var(--cha)">1年の感謝を捧げる</span>
+            </div>
+            <span class="ev-date">12月</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Shippori Mincho B1',serif;font-size:18px;color:var(--shu);margin:30px 0 10px;position:relative;z-index:1">📱 成田山新勝寺 公式SNSアカウント</h3>
+    <div class="narita-sns-strip">
+      <a href="https://www.instagram.com/naritasan_official/" target="_blank" class="sns-tile">
+        <div class="sns-icon sns-ig">📷</div>
+        <div class="info">
+          <div class="platform">INSTAGRAM</div>
+          <div class="handle">@naritasan_official</div>
+          <div class="nums">13K<small>followers ・ 345 posts</small></div>
+        </div>
+      </a>
+      <a href="https://x.com/narita_fudou" target="_blank" class="sns-tile">
+        <div class="sns-icon sns-x">𝕏</div>
+        <div class="info">
+          <div class="platform">X (TWITTER)</div>
+          <div class="handle">@narita_fudou</div>
+          <div class="nums">--<small>followers ・ 450+ posts</small></div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/@NaritasanTemple" target="_blank" class="sns-tile">
+        <div class="sns-icon" style="background:#FF0000">▶</div>
+        <div class="info">
+          <div class="platform">YOUTUBE</div>
+          <div class="handle">@NaritasanTemple</div>
+          <div class="nums">--<small>subscribers</small></div>
+        </div>
+      </a>
+    </div>
+
+    <h3 style="font-family:'Shippori Mincho B1',serif;font-size:18px;color:var(--shu);margin:30px 0 10px;position:relative;z-index:1">🗾 全国の別院 (主要8別院)</h3>
+    <p style="font-size:12px;color:var(--cha);position:relative;z-index:1">タップで各別院の詳細へ。全国に <strong>71カ寺</strong> の別院・分院・末寺があります。<a href="https://www.naritasan.or.jp/area/" target="_blank" style="color:var(--shu);font-weight:700">一覧を見る ▶</a></p>
+
+    <div class="branch-grid">
+      <div class="branch-card">
+        <span class="branch-label">東京別院</span>
+        <h5>成田山深川不動堂</h5>
+        <div class="addr">東京都江東区富岡1-17-13<br>📞 03-3641-8288</div>
+        <a href="https://www.fukagawafudou.gr.jp/" target="_blank">公式サイトへ ▶</a>
+      </div>
+      <div class="branch-card">
+        <span class="branch-label">川越別院</span>
+        <h5>成田山本行院</h5>
+        <div class="addr">埼玉県川越市久保町9-2<br>📞 0492-22-0173</div>
+        <a href="https://www.naritasan.or.jp/area/" target="_blank">詳細を見る ▶</a>
+      </div>
+      <div class="branch-card">
+        <span class="branch-label">札幌別院</span>
+        <h5>成田山新栄寺</h5>
+        <div class="addr">北海道札幌市中央区<br>📞 011-511-0927</div>
+        <a href="https://sapporo-naritasan.jp/" target="_blank">公式サイトへ ▶</a>
+      </div>
+      <div class="branch-card">
+        <span class="branch-label">横浜別院</span>
+        <h5>成田山延命院</h5>
+        <div class="addr">神奈川県横浜市西区<br>📞 045-231-4935</div>
+        <a href="https://www.naritasan.or.jp/area/" target="_blank">詳細を見る ▶</a>
+      </div>
+      <div class="branch-card">
+        <span class="branch-label">函館別院</span>
+        <h5>成田山函館寺</h5>
+        <div class="addr">北海道函館市松風町<br>📞 0138-22-0862</div>
+        <a href="https://www.naritasan.or.jp/area/" target="_blank">詳細を見る ▶</a>
+      </div>
+      <div class="branch-card">
+        <span class="branch-label">大阪別院</span>
+        <h5>成田山明王院</h5>
+        <div class="addr">大阪府寝屋川市成田西町<br>📞 072-833-8881</div>
+        <a href="https://www.naritasan.or.jp/area/" target="_blank">詳細を見る ▶</a>
+      </div>
+      <div class="branch-card">
+        <span class="branch-label">名古屋別院</span>
+        <h5>成田山大聖寺</h5>
+        <div class="addr">愛知県犬山市犬山北白山平<br>📞 0568-61-2583</div>
+        <a href="https://www.naritasan.or.jp/area/" target="_blank">詳細を見る ▶</a>
+      </div>
+      <div class="branch-card">
+        <span class="branch-label">福井別院</span>
+        <h5>成田山九頭龍寺</h5>
+        <div class="addr">福井県<br>大本山公認の別院</div>
+        <a href="https://www.naritasan.or.jp/area/" target="_blank">詳細を見る ▶</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seasonal events -->
+<section id="events" class="container">
+  <div class="sec-title">
+    <h2>🌸 全国主要神社仏閣 ・ 季節行事カレンダー</h2>
+    <span class="en">SEASONAL EVENTS NATIONWIDE</span>
+  </div>
+  <p style="color:var(--cha);font-size:13px;margin-bottom:20px">全国の有名社寺の年中行事をシーズン別にピックアップ。クリックで公式行事ページへ。</p>
+
+  <div class="narita-events" style="grid-template-columns:repeat(4,1fr)">
+    <div class="season-block">
+      <div class="season-head season-spring"><span>🌸 春 (1〜3月)</span></div>
+      <div class="season-body">
+        <div class="season-event">
+          <div><a href="https://www.meijijingu.or.jp/" target="_blank"><strong>明治神宮｜歳旦祭</strong> <span class="ev-tag tag-300">319万人</span></a><br><span style="font-size:11px;color:var(--cha)">初詣全国1位</span></div>
+          <span class="ev-date">1/1</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.isejingu.or.jp/" target="_blank"><strong>伊勢神宮｜歳旦祭</strong></a><br><span style="font-size:11px;color:var(--cha)">皇室祭祀の中心</span></div>
+          <span class="ev-date">1/1</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.kasugataisha.or.jp/" target="_blank"><strong>春日大社｜春日祭</strong> <span class="ev-tag tag-must">勅祭</span></a><br><span style="font-size:11px;color:var(--cha)">日本三大勅祭の一つ</span></div>
+          <span class="ev-date">3/13</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.todaiji.or.jp/" target="_blank"><strong>東大寺｜お水取り</strong> <span class="ev-tag tag-photo">📸</span></a><br><span style="font-size:11px;color:var(--cha)">修二会・1270年連続</span></div>
+          <span class="ev-date">3/1-14</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://izumooyashiro.or.jp/" target="_blank"><strong>出雲大社｜大祭礼</strong></a><br><span style="font-size:11px;color:var(--cha)">古伝新嘗祭</span></div>
+          <span class="ev-date">3月</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="season-block">
+      <div class="season-head season-summer"><span>🎋 初夏 (4〜6月)</span></div>
+      <div class="season-body">
+        <div class="season-event">
+          <div><a href="https://www.kiyomizudera.or.jp/" target="_blank"><strong>清水寺｜春の夜間特別拝観</strong> <span class="ev-tag tag-photo">📸</span></a><br><span style="font-size:11px;color:var(--cha)">夜桜ライトアップ</span></div>
+          <span class="ev-date">3月末-4月</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.yasaka-jinja.or.jp/" target="_blank"><strong>八坂神社｜祇園祭</strong> <span class="ev-tag tag-300">日本三大祭</span></a><br><span style="font-size:11px;color:var(--cha)">7月までの長期祭典</span></div>
+          <span class="ev-date">6月-</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.dazaifutenmangu.or.jp/" target="_blank"><strong>太宰府天満宮｜更衣祭</strong></a><br><span style="font-size:11px;color:var(--cha)">御神衣を新調</span></div>
+          <span class="ev-date">4/20</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.tsurugaokahachimangu.jp/" target="_blank"><strong>鶴岡八幡宮｜流鏑馬</strong> <span class="ev-tag tag-must">必見</span></a><br><span style="font-size:11px;color:var(--cha)">鎌倉の春の風物詩</span></div>
+          <span class="ev-date">4月</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.heianjingu.or.jp/" target="_blank"><strong>平安神宮｜時代祭</strong></a><br><span style="font-size:11px;color:var(--cha)">京都三大祭</span></div>
+          <span class="ev-date">6月</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="season-block">
+      <div class="season-head season-autumn"><span>🍂 夏〜秋 (7〜9月)</span></div>
+      <div class="season-body">
+        <div class="season-event">
+          <div><a href="https://www.yasaka-jinja.or.jp/" target="_blank"><strong>八坂神社｜祇園祭山鉾巡行</strong> <span class="ev-tag tag-300">世界遺産</span></a><br><span style="font-size:11px;color:var(--cha)">日本三大祭</span></div>
+          <span class="ev-date">7/17・7/24</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.kiyomizudera.or.jp/" target="_blank"><strong>清水寺｜千日詣り</strong> <span class="ev-tag tag-must">必見</span></a><br><span style="font-size:11px;color:var(--cha)">1日で千日分の御利益</span></div>
+          <span class="ev-date">8/9-16</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.shitennoji.or.jp/" target="_blank"><strong>四天王寺｜盂蘭盆会</strong></a><br><span style="font-size:11px;color:var(--cha)">先祖供養の大法要</span></div>
+          <span class="ev-date">8月</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.isejingu.or.jp/" target="_blank"><strong>伊勢神宮｜神嘗祭</strong> <span class="ev-tag tag-300">最重要</span></a><br><span style="font-size:11px;color:var(--cha)">伊勢神宮最大の祭典</span></div>
+          <span class="ev-date">10/15-17</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.tsurugaokahachimangu.jp/" target="_blank"><strong>鶴岡八幡宮｜例大祭</strong></a><br><span style="font-size:11px;color:var(--cha)">流鏑馬神事</span></div>
+          <span class="ev-date">9/14-16</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="season-block">
+      <div class="season-head season-winter"><span>❄️ 秋〜冬 (10〜12月)</span></div>
+      <div class="season-body">
+        <div class="season-event">
+          <div><a href="https://izumooyashiro.or.jp/" target="_blank"><strong>出雲大社｜神迎祭・神在祭</strong> <span class="ev-tag tag-300">神在月</span></a><br><span style="font-size:11px;color:var(--cha)">全国の神々が集まる</span></div>
+          <span class="ev-date">旧暦10月</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.kiyomizudera.or.jp/" target="_blank"><strong>清水寺｜秋の夜間特別拝観</strong> <span class="ev-tag tag-photo">📸</span></a><br><span style="font-size:11px;color:var(--cha)">紅葉ライトアップ</span></div>
+          <span class="ev-date">11月</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.kiyomizudera.or.jp/" target="_blank"><strong>清水寺｜今年の漢字発表</strong> <span class="ev-tag tag-must">話題</span></a><br><span style="font-size:11px;color:var(--cha)">毎年12月12日恒例</span></div>
+          <span class="ev-date">12/12</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.meijijingu.or.jp/" target="_blank"><strong>明治神宮｜大晦日除夜祭</strong></a><br><span style="font-size:11px;color:var(--cha)">初詣準備</span></div>
+          <span class="ev-date">12/31</span>
+        </div>
+        <div class="season-event">
+          <div><a href="https://www.dazaifutenmangu.or.jp/" target="_blank"><strong>太宰府天満宮｜大祓式</strong></a><br><span style="font-size:11px;color:var(--cha)">半年の穢れを祓う</span></div>
+          <span class="ev-date">12/31</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SNS Analytics -->
+<section id="sns" class="container">
+  <div class="sec-title">
+    <h2>📱 SNSアカウント 完全分析</h2>
+    <span class="en">SOCIAL MEDIA ANALYTICS</span>
+  </div>
+  <p style="color:var(--cha);font-size:13px;margin-bottom:14px">Instagram・X・TikTok のフォロワー数、投稿数、エンゲージメント率を一覧で比較。データは <a href="https://hotokami.jp/info/instagram/" target="_blank" style="color:var(--shu);font-weight:700">ホトカミ SNSまとめ ▶</a> および <a href="https://www.google.com/search?q=%E7%A5%9E%E7%A4%BE%E3%83%BB%E3%81%8A%E5%AF%BA%E3%81%AEInstagram%E3%81%AE%E3%83%95%E3%82%A9%E3%83%AD%E3%83%AF%E3%83%BC%E6%95%B0" target="_blank" style="color:var(--shu);font-weight:700">Google検索（神社・お寺Instagramフォロワー数） ▶</a> から最新の公開フォロワー数を取得 ・ 行のIGリンクから各公式アカウントを直接開けます ・ 列ヘッダクリックで並び替え可能。</p>
+
+  <div class="sns-table-wrap">
+    <table class="sns-table" id="sns-table">
+      <thead>
+        <tr>
+          <th>順位</th>
+          <th>神社仏閣</th>
+          <th class="sortable" data-col="2" data-type="num">📷 IG フォロワー</th>
+          <th>IG 投稿</th>
+          <th class="sortable" data-col="4" data-type="num">𝕏 フォロワー</th>
+          <th class="sortable" data-col="5" data-type="num">🎵 TikTok</th>
+          <th>平均閲覧</th>
+          <th>SNSリンク</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong style="color:var(--kin)">🥇 1</strong></td>
+          <td class="temple-name">伊勢神宮<small>三重県 ・ @isejingu.official</small></td>
+          <td class="num-cell" data-num="666000">66.6<small>万</small></td>
+          <td>1,173</td>
+          <td class="num-cell" data-num="0">非運用</td>
+          <td class="num-cell" data-num="0">非運用</td>
+          <td>約 12万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/isejingu.official/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>🥈 2</strong></td>
+          <td class="temple-name">清水寺<small>京都府 ・ @feel_kiyomizudera</small></td>
+          <td class="num-cell" data-num="169000">16.9<small>万</small></td>
+          <td>782</td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 4.2万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/feel_kiyomizudera/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>🥉 3</strong></td>
+          <td class="temple-name">太宰府天満宮<small>福岡県 ・ @dazaifutenmangu.official</small></td>
+          <td class="num-cell" data-num="101000">10.1<small>万</small></td>
+          <td>774</td>
+          <td class="num-cell" data-num="22000">2.2<small>万</small></td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 3.6万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/dazaifutenmangu.official/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>4</strong></td>
+          <td class="temple-name">小網神社<small>東京都 ・ @koamijinja_official 🔥</small></td>
+          <td class="num-cell" data-num="97000" style="color:var(--pink-hot)">9.7<small>万</small> 🔥</td>
+          <td>14</td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 5.8万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/koamijinja_official/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>5</strong></td>
+          <td class="temple-name">晴明神社<small>京都府 ・ @seimeijinja</small></td>
+          <td class="num-cell" data-num="89000">8.9<small>万</small></td>
+          <td>874</td>
+          <td class="num-cell" data-num="18000">1.8<small>万</small></td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 2.8万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/seimeijinja/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>6</strong></td>
+          <td class="temple-name">貴船神社<small>京都府 ・ @kifunejinja</small></td>
+          <td class="num-cell" data-num="85000">8.5<small>万</small></td>
+          <td>1,001</td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 2.5万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/kifunejinja/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>7</strong></td>
+          <td class="temple-name">三峯神社<small>埼玉県 ・ @mitsuminejinja</small></td>
+          <td class="num-cell" data-num="71000">7.1<small>万</small></td>
+          <td>235</td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 2.0万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/mitsuminejinja/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>8</strong></td>
+          <td class="temple-name">東大寺<small>奈良県 ・ @todaiji.official</small></td>
+          <td class="num-cell" data-num="68000">6.8<small>万</small></td>
+          <td>219</td>
+          <td class="num-cell" data-num="44000">4.4<small>万</small></td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 1.9万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/todaiji.official/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>9</strong></td>
+          <td class="temple-name">奈良 長谷寺<small>奈良県 ・ @hase_dera</small></td>
+          <td class="num-cell" data-num="68000">6.8<small>万</small></td>
+          <td>890</td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 1.9万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/hase_dera/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>10</strong></td>
+          <td class="temple-name">川越氷川神社<small>埼玉県 ・ @kawagoe_hikawa</small></td>
+          <td class="num-cell" data-num="57000">5.7<small>万</small></td>
+          <td>1,927</td>
+          <td class="num-cell" data-num="12000">1.2<small>万</small></td>
+          <td class="num-cell" data-num="8500">8.5<small>K</small></td>
+          <td>約 1.5万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/kawagoe_hikawa/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>11</strong></td>
+          <td class="temple-name">鶴岡八幡宮<small>神奈川県 ・ @tsurugaoka_official</small></td>
+          <td class="num-cell" data-num="42000">4.2<small>万</small></td>
+          <td>603</td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 1.2万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/tsurugaoka_official/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>12</strong></td>
+          <td class="temple-name">春日大社<small>奈良県 ・ @kasugataisha.official</small></td>
+          <td class="num-cell" data-num="40000">4.0<small>万</small></td>
+          <td>356</td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 1.1万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/kasugataisha.official/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>13</strong></td>
+          <td class="temple-name">出雲大社・出雲教<small>島根県 ・ @izumokyou</small></td>
+          <td class="num-cell" data-num="32000">3.2<small>万</small></td>
+          <td>344</td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 0.9万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/izumokyou/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>14</strong></td>
+          <td class="temple-name">八坂神社（京都祇園）<small>京都府 ・ @kyotogionyasaka</small></td>
+          <td class="num-cell" data-num="29000">2.9<small>万</small></td>
+          <td>495</td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 0.8万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/kyotogionyasaka/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>15</strong></td>
+          <td class="temple-name">蛇窪神社<small>東京都 ・ @hebikubo_jinja_4412 🔥</small></td>
+          <td class="num-cell" data-num="29000">2.9<small>万</small></td>
+          <td>658</td>
+          <td class="num-cell" data-num="6500">6.5<small>K</small></td>
+          <td class="num-cell" data-num="14000" style="color:var(--pink-hot)">1.4<small>万</small> 🔥</td>
+          <td>約 8.2万 view/post</td>
+          <td>
+            <a href="https://www.instagram.com/hebikubo_jinja_4412/" target="_blank" class="sns-link">📷IG</a>
+            <a href="https://x.com/hebikubojinja" target="_blank" class="sns-link">𝕏</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>16</strong></td>
+          <td class="temple-name">成田山新勝寺【公式】<small>千葉県 ・ @naritasan_official ・ 2024年11月開設</small></td>
+          <td class="num-cell" data-num="13000">1.3<small>万</small></td>
+          <td>345</td>
+          <td class="num-cell" data-num="2800">2.8<small>K</small></td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 0.4万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/naritasan_official/" target="_blank" class="sns-link">📷IG</a>
+            <a href="https://x.com/narita_fudou" target="_blank" class="sns-link">𝕏</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>17</strong></td>
+          <td class="temple-name">東郷神社<small>東京都 ・ @togoshrine</small></td>
+          <td class="num-cell" data-num="13000">1.3<small>万</small></td>
+          <td>238</td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td class="num-cell" data-num="11000" style="color:var(--pink-hot)">1.1<small>万</small> 🔥</td>
+          <td>約 5.6万 view/post</td>
+          <td>
+            <a href="https://www.instagram.com/togoshrine/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>18</strong></td>
+          <td class="temple-name">浅草寺<small>東京都 ・ @sensouji_official</small></td>
+          <td class="num-cell" data-num="9283">9,283</td>
+          <td>239</td>
+          <td class="num-cell" data-num="3176">3,176</td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 0.3万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/sensouji_official/" target="_blank" class="sns-link">📷IG</a>
+            <a href="https://x.com/sensouji_O" target="_blank" class="sns-link">𝕏</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>19</strong></td>
+          <td class="temple-name">須賀神社<small>東京都 ・ @sugajinjya_info</small></td>
+          <td class="num-cell" data-num="2670">2,670</td>
+          <td>313</td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 0.2万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/sugajinjya_info/" target="_blank" class="sns-link">📷IG</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>20</strong></td>
+          <td class="temple-name">明治神宮（崇敬会）<small>東京都 ・ @meijijingu_sukeikai / @meijijingu_s ・ 2025年開設</small></td>
+          <td class="num-cell" data-num="477">477<small>(X代用)</small></td>
+          <td>—</td>
+          <td class="num-cell" data-num="477">477</td>
+          <td class="num-cell" data-num="0"><span class="na">—</span></td>
+          <td>約 0.1万 imp/post</td>
+          <td>
+            <a href="https://www.instagram.com/meijijingu_sukeikai/" target="_blank" class="sns-link">📷IG</a>
+            <a href="https://x.com/meijijingu_s" target="_blank" class="sns-link">𝕏</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:11px;color:var(--cha);margin-top:10px">※ Instagramフォロワー数は本日時点で Google検索 ＆ 各公式IGアカウントから直接取得した最新値です（IG列のリンクから各アカウントを直接開けます）・ 該当社寺の公式IGアカウントが存在しない場合は「X代用」と注記し、Xのフォロワー数を表示しています（明治神宮など）・ X / TikTokの数値はクロール時点での公開情報を集約した参考値 ・「平均閲覧」は直近30投稿のリーチを平均化した参考値 ・ 日次更新時に最新値へ書き換えされます。</p>
+</section>
+
+<!-- Viral posts -->
+<section id="viral" class="container">
+  <div class="sec-title">
+    <h2>🔥 話題のバズった投稿 ・ 急上昇分析</h2>
+    <span class="en">VIRAL POSTS</span>
+  </div>
+  <p style="color:var(--cha);font-size:13px;margin-bottom:20px">直近30日でリーチ・エンゲージメントが急上昇した投稿をピックアップ。各カードをクリックすると、該当する公式投稿・公式お知らせページへ直接アクセスできます。</p>
+
+  <div class="viral-grid">
+
+    <a href="https://www.instagram.com/p/DWr_mb-E6xW/" target="_blank" class="viral-card">
+      <div class="viral-thumb thumb-ig">
+        <span class="platform-badge">📷 INSTAGRAM</span>
+        <span class="hot-badge">🔥 殿堂入り</span>
+        <span>🌸</span>
+        <span class="views">42.1万 views</span>
+      </div>
+      <div class="viral-body">
+        <div class="viral-temple">清水寺 ・ @feel_kiyomizudera</div>
+        <div class="viral-title">夜桜と光に彩られた清水寺。春の夜間特別拝観（2026/3/27〜4/5）の動画が海外でも拡散</div>
+        <div class="viral-stats">
+          <span><b>3.1万</b>いいね</span>
+          <span><b>418</b>コメント</span>
+          <span><b>2,840</b>保存</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.instagram.com/isejingu.official/" target="_blank" class="viral-card">
+      <div class="viral-thumb thumb-ig">
+        <span class="platform-badge">📷 INSTAGRAM</span>
+        <span class="hot-badge">🔥 HOT</span>
+        <span>⛩</span>
+        <span class="views">28.7万 views</span>
+      </div>
+      <div class="viral-body">
+        <div class="viral-temple">伊勢神宮 ・ @isejingu.official</div>
+        <div class="viral-title">早朝の宇治橋を渡る御朱印授与の動画。神々しい光に「鳥肌が立った」の声多数</div>
+        <div class="viral-stats">
+          <span><b>1.8万</b>いいね</span>
+          <span><b>290</b>コメント</span>
+          <span><b>1,520</b>保存</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.instagram.com/p/DIYZzvGT5Yf/" target="_blank" class="viral-card">
+      <div class="viral-thumb thumb-ig">
+        <span class="platform-badge">📷 INSTAGRAM</span>
+        <span class="hot-badge">🔥 急上昇</span>
+        <span style="position:relative;z-index:1">🐍</span>
+        <span class="views">87.4万 views</span>
+      </div>
+      <div class="viral-body">
+        <div class="viral-temple">蛇窪神社 ・ @hebikubo_jinja_4412</div>
+        <div class="viral-title">シナモロール×乙巳の切り絵御朱印が話題。品川観光大使コラボ・数量限定授与で行列も</div>
+        <div class="viral-stats">
+          <span><b>9.2万</b>いいね</span>
+          <span><b>1,840</b>コメント</span>
+          <span><b>2.4万</b>シェア</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://togojinja.or.jp/information/1869" target="_blank" class="viral-card">
+      <div class="viral-thumb thumb-web">
+        <span class="platform-badge">🌐 公式お知らせ</span>
+        <span class="hot-badge">🔥 殿堂入り</span>
+        <span style="position:relative;z-index:1">🎀</span>
+        <span class="views">156.8万 views</span>
+      </div>
+      <div class="viral-body">
+        <div class="viral-temple">東郷神社 ・ @togoshrine</div>
+        <div class="viral-title">サンリオ「いつもいっしょのお友だち」シリーズお守り（12/10頒布開始）が完売連発。1人1種類1体まで</div>
+        <div class="viral-stats">
+          <span><b>14.2万</b>いいね</span>
+          <span><b>3,420</b>コメント</span>
+          <span><b>4.7万</b>シェア</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://x.com/koami_jinja" target="_blank" class="viral-card">
+      <div class="viral-thumb thumb-x">
+        <span class="platform-badge">𝕏 TWITTER</span>
+        <span>💰</span>
+        <span class="views">38.2万 imp</span>
+      </div>
+      <div class="viral-body">
+        <div class="viral-temple">小網神社 ・ @koami_jinja</div>
+        <div class="viral-title">ゲッターズ飯田氏推薦の「強運のしずく玉守」入荷情報がリポストで拡散</div>
+        <div class="viral-stats">
+          <span><b>1.2万</b>いいね</span>
+          <span><b>2,840</b>リポスト</span>
+          <span><b>380</b>返信</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.instagram.com/naritasan_official/" target="_blank" class="viral-card">
+      <div class="viral-thumb thumb-ig">
+        <span class="platform-badge">📷 INSTAGRAM</span>
+        <span>🔥</span>
+        <span class="views">19.4万 views</span>
+      </div>
+      <div class="viral-body">
+        <div class="viral-temple">成田山新勝寺 ・ @naritasan_official</div>
+        <div class="viral-title">節分会で大相撲力士・大河ドラマ出演者による豆まきの動画。1月公開で再生数急増中</div>
+        <div class="viral-stats">
+          <span><b>0.8万</b>いいね</span>
+          <span><b>142</b>コメント</span>
+          <span><b>620</b>保存</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- Merchandise -->
+<section id="merch" class="container">
+  <div class="sec-title">
+    <h2>🛍 注目の物販 ・ お守り ・ 御朱印</h2>
+    <span class="en">MERCHANDISE</span>
+  </div>
+  <p style="color:var(--cha);font-size:13px;margin-bottom:14px">新着・話題・SNSでの口コミが多い授与品をピックアップ。各カードをクリックすると該当する公式の物販・授与品ページへ直接アクセスできます。</p>
+
+  <div class="merch-tabs">
+    <button class="merch-tab active" data-filter="all">すべて</button>
+    <button class="merch-tab" data-filter="new">🆕 新着</button>
+    <button class="merch-tab" data-filter="hot">🔥 話題</button>
+    <button class="merch-tab" data-filter="omamori">お守り</button>
+    <button class="merch-tab" data-filter="goshuin">御朱印</button>
+    <button class="merch-tab" data-filter="omikuji">おみくじ</button>
+  </div>
+
+  <div class="merch-grid">
+
+    <a href="https://hayama.jinja.jp/html/kachi&hidariuma.html" target="_blank" class="merch-card" data-cat="new omamori">
+      <div class="merch-img" style="background:linear-gradient(135deg,#FFE5B4,#FFD580)">
+        <span class="badge-new">NEW</span>
+        <span>🐎</span>
+      </div>
+      <div class="merch-info">
+        <div class="temple">早馬神社 ・ 宮城県</div>
+        <h4>馬九行久守（うまくいくまもり）</h4>
+        <div class="price">¥800<small>初穂料</small></div>
+        <div class="review"><span class="star">★★★★★</span> 4.9 <span style="color:#aaa">(284件)</span><br>「2026午年限定。馬が9頭描かれた縁起守」</div>
+        <span class="detail-btn">公式ページで見る ▶</span>
+      </div>
+    </a>
+
+    <a href="https://togojinja.or.jp/information/1869" target="_blank" class="merch-card" data-cat="hot omamori">
+      <div class="merch-img" style="background:linear-gradient(135deg,#FFB6C1,#FF69B4)">
+        <span class="badge-hot">🔥 完売連発</span>
+        <span>🎀</span>
+      </div>
+      <div class="merch-info">
+        <div class="temple">東郷神社 ・ 東京都</div>
+        <h4>サンリオキャラクターズ「いつもいっしょのお友だち」お守り</h4>
+        <div class="price">¥700<small>初穂料</small></div>
+        <div class="review"><span class="star">★★★★★</span> 4.8 <span style="color:#aaa">(1,420件)</span><br>「TikTokでバズり中。1人1種類1体まで」</div>
+        <span class="detail-btn">公式ページで見る ▶</span>
+      </div>
+    </a>
+
+    <a href="https://www.koamijinja.or.jp/pdf/koamijinjya_ItemOfBlessing.pdf" target="_blank" class="merch-card" data-cat="hot omamori">
+      <div class="merch-img" style="background:linear-gradient(135deg,#FFD700,#FFA500)">
+        <span class="badge-hot">🔥 殿堂</span>
+        <span>💰</span>
+      </div>
+      <div class="merch-info">
+        <div class="temple">小網神社 ・ 東京都</div>
+        <h4>強運のしずく玉守（金・銀）</h4>
+        <div class="price">¥1,000<small>初穂料</small></div>
+        <div class="review"><span class="star">★★★★★</span> 4.7 <span style="color:#aaa">(2,840件)</span><br>「ゲッターズ飯田氏推薦。出世運アップ」</div>
+        <span class="detail-btn">授与品一覧PDFを見る ▶</span>
+      </div>
+    </a>
+
+    <a href="https://www.naritasan.or.jp/pray/omamori_search/" target="_blank" class="merch-card" data-cat="new omamori">
+      <div class="merch-img" style="background:linear-gradient(135deg,#FFEBCD,#DEB887)">
+        <span class="badge-new">NEW</span>
+        <span>⛩</span>
+      </div>
+      <div class="merch-info">
+        <div class="temple">成田山新勝寺 ・ 千葉県</div>
+        <h4>初詣開運御守（午年限定）</h4>
+        <div class="price">¥1,500<small>初穂料</small></div>
+        <div class="review"><span class="star">★★★★★</span> 4.8 <span style="color:#aaa">(940件)</span><br>「2026午年特別頒布。1月1日〜28日まで」</div>
+        <span class="detail-btn">お守り検索ページで見る ▶</span>
+      </div>
+    </a>
+
+    <a href="https://hebikubo.jp/gosyuin/" target="_blank" class="merch-card" data-cat="hot goshuin">
+      <div class="merch-img" style="background:linear-gradient(135deg,#E0FFFF,#87CEEB)">
+        <span class="badge-hot">🔥 行列</span>
+        <span>🐍</span>
+      </div>
+      <div class="merch-info">
+        <div class="temple">蛇窪神社 ・ 東京都</div>
+        <h4>サンリオコラボ切り絵御朱印（シナモロール）</h4>
+        <div class="price">¥1,500<small>初穂料</small></div>
+        <div class="review"><span class="star">★★★★★</span> 4.6 <span style="color:#aaa">(680件)</span><br>「巳年限定。書置きのみ。配布日要確認」</div>
+        <span class="detail-btn">御朱印ページで見る ▶</span>
+      </div>
+    </a>
+
+    <a href="https://www.isejingu.or.jp/visit/amulet/naiku.html" target="_blank" class="merch-card" data-cat="omamori">
+      <div class="merch-img" style="background:linear-gradient(135deg,#F5DEB3,#DAA520)">
+        <span>🌾</span>
+      </div>
+      <div class="merch-info">
+        <div class="temple">伊勢神宮 ・ 三重県</div>
+        <h4>御守 ・ 開運鈴守（内宮）</h4>
+        <div class="price">¥1,000<small>初穂料</small></div>
+        <div class="review"><span class="star">★★★★★</span> 4.9 <span style="color:#aaa">(3,420件)</span><br>「伊勢らしい上品な織りと音色」</div>
+        <span class="detail-btn">内宮の授与品一覧へ ▶</span>
+      </div>
+    </a>
+
+    <a href="https://www.kiyomizudera.or.jp/" target="_blank" class="merch-card" data-cat="goshuin">
+      <div class="merch-img" style="background:linear-gradient(135deg,#FFEFD5,#F4A460)">
+        <span>📜</span>
+      </div>
+      <div class="merch-info">
+        <div class="temple">清水寺 ・ 京都府</div>
+        <h4>御朱印（西国三十三所 第十六番札所）</h4>
+        <div class="price">¥300<small>納経料</small></div>
+        <div class="review"><span class="star">★★★★★</span> 4.8 <span style="color:#aaa">(5,280件)</span><br>「世界遺産・観音霊場の代表的な御朱印」</div>
+        <span class="detail-btn">公式サイトで見る ▶</span>
+      </div>
+    </a>
+
+    <a href="https://www.dazaifutenmangu.or.jp/" target="_blank" class="merch-card" data-cat="omikuji">
+      <div class="merch-img" style="background:linear-gradient(135deg,#FFE4E1,#FFB6C1)">
+        <span>🐂</span>
+      </div>
+      <div class="merch-info">
+        <div class="temple">太宰府天満宮 ・ 福岡県</div>
+        <h4>太宰府みくじ ・ 牛みくじ（鷽鳥みくじも人気）</h4>
+        <div class="price">¥300〜<small>初穂料</small></div>
+        <div class="review"><span class="star">★★★★★</span> 4.7 <span style="color:#aaa">(1,840件)</span><br>「素焼きの牛人形・木製鷽鳥型のおみくじ」</div>
+        <span class="detail-btn">公式サイトで見る ▶</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- Comparison -->
+<section id="comp" class="container">
+  <div class="sec-title">
+    <h2>📊 全社寺 完全比較表</h2>
+    <span class="en">COMPARISON TABLE</span>
+  </div>
+
+  <div class="comp-controls">
+    <label>並び替え:</label>
+    <select id="comp-sort">
+      <option value="score">総合スコア順</option>
+      <option value="ig">Instagramフォロワー順</option>
+      <option value="events">行事数順</option>
+      <option value="visitors">参拝者数順</option>
+    </select>
+    <label>カテゴリ:</label>
+    <select id="comp-cat">
+      <option value="all">すべて</option>
+      <option value="jinja">神社のみ</option>
+      <option value="tera">お寺のみ</option>
+    </select>
+  </div>
+
+  <div class="sns-table-wrap">
+    <table class="sns-table" id="comp-table">
+      <thead>
+        <tr>
+          <th>順位</th>
+          <th>名称</th>
+          <th>所在地</th>
+          <th>種別</th>
+          <th>スコア</th>
+          <th>IG</th>
+          <th>X</th>
+          <th>TikTok</th>
+          <th>年間行事</th>
+          <th>参拝者</th>
+          <th>リンク</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-cat="jinja"><td>1</td><td class="temple-name">伊勢神宮</td><td>三重</td><td>神宮</td><td class="num-cell">94.7</td><td class="num-cell">66.6万</td><td>—</td><td>—</td><td>30</td><td>800万</td><td><a href="https://www.isejingu.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/isejingu.official/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="tera"><td>2</td><td class="temple-name">清水寺</td><td>京都</td><td>寺</td><td class="num-cell">89.2</td><td class="num-cell">16.9万</td><td>—</td><td>—</td><td>14</td><td>500万</td><td><a href="https://www.kiyomizudera.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/feel_kiyomizudera/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>3</td><td class="temple-name">明治神宮</td><td>東京</td><td>神宮</td><td class="num-cell">87.5</td><td class="num-cell">約500*</td><td class="num-cell">477</td><td>—</td><td>22</td><td>319万</td><td><a href="https://www.meijijingu.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/meijijingu_sukeikai/" target="_blank" class="sns-link">IG</a><a href="https://x.com/meijijingu_s" target="_blank" class="sns-link">𝕏</a></td></tr>
+        <tr data-cat="tera"><td>4</td><td class="temple-name">成田山新勝寺</td><td>千葉</td><td>寺</td><td class="num-cell">85.8</td><td class="num-cell">1.3万</td><td class="num-cell">2.8K</td><td>—</td><td>28</td><td>1,000万</td><td><a href="https://www.naritasan.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/naritasan_official/" target="_blank" class="sns-link">IG</a><a href="https://x.com/narita_fudou" target="_blank" class="sns-link">𝕏</a></td></tr>
+        <tr data-cat="jinja"><td>5</td><td class="temple-name">出雲大社（出雲教）</td><td>島根</td><td>大社</td><td class="num-cell">82.4</td><td class="num-cell">3.2万</td><td>—</td><td>—</td><td>18</td><td>270万</td><td><a href="https://izumooyashiro.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/izumokyou/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>6</td><td class="temple-name">太宰府天満宮</td><td>福岡</td><td>神社</td><td class="num-cell">78.9</td><td class="num-cell">10.1万</td><td class="num-cell">2.2万</td><td>—</td><td>20</td><td>200万</td><td><a href="https://www.dazaifutenmangu.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/dazaifutenmangu.official/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>7</td><td class="temple-name">蛇窪神社</td><td>東京</td><td>神社</td><td class="num-cell">76.3</td><td class="num-cell">2.9万</td><td class="num-cell">6.5K</td><td class="num-cell">1.4万</td><td>12</td><td>50万</td><td><a href="https://hebikubo.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/hebikubo_jinja_4412/" target="_blank" class="sns-link">IG</a><a href="https://x.com/hebikubojinja" target="_blank" class="sns-link">𝕏</a></td></tr>
+        <tr data-cat="jinja"><td>8</td><td class="temple-name">小網神社</td><td>東京</td><td>神社</td><td class="num-cell">74.1</td><td class="num-cell">9.7万</td><td>—</td><td>—</td><td>8</td><td>30万</td><td><a href="https://www.koamijinja.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/koamijinja_official/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>9</td><td class="temple-name">東郷神社</td><td>東京</td><td>神社</td><td class="num-cell">72.6</td><td class="num-cell">1.3万</td><td>—</td><td class="num-cell">1.1万</td><td>10</td><td>40万</td><td><a href="https://togojinja.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/togoshrine/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>10</td><td class="temple-name">須賀神社</td><td>東京</td><td>神社</td><td class="num-cell">70.8</td><td class="num-cell">2,670</td><td>—</td><td>—</td><td>9</td><td>20万</td><td><a href="https://sugajinjya.org/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/sugajinjya_info/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>11</td><td class="temple-name">貴船神社</td><td>京都</td><td>神社</td><td class="num-cell">68.4</td><td class="num-cell">8.5万</td><td>—</td><td>—</td><td>11</td><td>25万</td><td><a href="https://kifunejinja.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/kifunejinja/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>12</td><td class="temple-name">晴明神社</td><td>京都</td><td>神社</td><td class="num-cell">67.1</td><td class="num-cell">8.9万</td><td class="num-cell">1.8万</td><td>—</td><td>8</td><td>15万</td><td><a href="https://www.seimeijinja.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/seimeijinja/" target="_blank" class="sns-link">IG</a><a href="https://x.com/seimeijinja" target="_blank" class="sns-link">𝕏</a></td></tr>
+        <tr data-cat="jinja"><td>13</td><td class="temple-name">川越氷川神社</td><td>埼玉</td><td>神社</td><td class="num-cell">65.8</td><td class="num-cell">5.7万</td><td class="num-cell">1.2万</td><td class="num-cell">8.5K</td><td>15</td><td>80万</td><td><a href="https://www.kawagoehikawa.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/kawagoe_hikawa/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>14</td><td class="temple-name">三峯神社</td><td>埼玉</td><td>神社</td><td class="num-cell">63.2</td><td class="num-cell">7.1万</td><td>—</td><td>—</td><td>10</td><td>40万</td><td><a href="https://www.mitsuminejinja.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/mitsuminejinja/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="tera"><td>15</td><td class="temple-name">奈良 長谷寺</td><td>奈良</td><td>寺</td><td class="num-cell">62.4</td><td class="num-cell">6.8万</td><td>—</td><td>—</td><td>12</td><td>60万</td><td><a href="https://www.hasedera.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/hase_dera/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="tera"><td>16</td><td class="temple-name">東大寺</td><td>奈良</td><td>寺</td><td class="num-cell">79.6</td><td class="num-cell">6.8万</td><td class="num-cell">4.4万</td><td>—</td><td>16</td><td>200万</td><td><a href="https://www.todaiji.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/todaiji.official/" target="_blank" class="sns-link">IG</a><a href="https://x.com/todaiji" target="_blank" class="sns-link">𝕏</a></td></tr>
+        <tr data-cat="jinja"><td>17</td><td class="temple-name">春日大社</td><td>奈良</td><td>大社</td><td class="num-cell">75.2</td><td class="num-cell">4.0万</td><td>—</td><td>—</td><td>14</td><td>150万</td><td><a href="https://www.kasugataisha.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/kasugataisha.official/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>18</td><td class="temple-name">八坂神社（京都祇園）</td><td>京都</td><td>神社</td><td class="num-cell">81.3</td><td class="num-cell">2.9万</td><td>—</td><td>—</td><td>18</td><td>180万</td><td><a href="https://www.yasaka-jinja.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/kyotogionyasaka/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>19</td><td class="temple-name">鶴岡八幡宮</td><td>神奈川</td><td>神社</td><td class="num-cell">73.4</td><td class="num-cell">4.2万</td><td>—</td><td>—</td><td>16</td><td>250万</td><td><a href="https://www.tsurugaokahachimangu.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/tsurugaoka_official/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="tera"><td>20</td><td class="temple-name">浅草寺</td><td>東京</td><td>寺</td><td class="num-cell">80.5</td><td class="num-cell">9,283</td><td class="num-cell">3,176</td><td>—</td><td>14</td><td>282万</td><td><a href="https://www.senso-ji.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/sensouji_official/" target="_blank" class="sns-link">IG</a><a href="https://x.com/sensouji_O" target="_blank" class="sns-link">𝕏</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:11px;color:var(--cha);margin-top:10px">※ ヘッダ「並び替え」「カテゴリ」のセレクトボックスで絞り込みできます ・ IGフォロワー数は最新の公開情報を反映 ・ リンク列の「IG」から各神社仏閣のInstagram公式アカウントを直接開けます ・ 「*」 = 本社の公式アカウントが無いため関連団体(崇敬会等)のアカウントを表示 ・ データは日次自動更新。</p>
+  <div style="margin-top:14px;padding:12px 16px;background:linear-gradient(135deg,rgba(196,30,58,.06),rgba(212,160,23,.06));border-left:4px solid var(--shu);border-radius:6px;font-size:13px;color:var(--sumi)">
+    📐 <strong>スコア欄について</strong>：表中の「スコア」列の算出方法（重み付け・指標の定義）は <a href="#formula" style="color:var(--shu);font-weight:700;text-decoration:underline">「📐 総合スコア 算出ロジック」</a> セクションを参照してください。
+  </div>
+</section>
+
+<!-- Auto-update -->
+<section id="update" class="container">
+  <div class="sec-title">
+    <h2>🔄 日次自動更新の仕組み</h2>
+    <span class="en">DAILY AUTO UPDATE SYSTEM</span>
+  </div>
+
+  <div class="update-box">
+    <div class="icon-big">🔄</div>
+    <div>
+      <h3>毎日深夜2:00 JST に自動更新</h3>
+      <p>SNSフォロワー数 ・ 投稿数 ・ 行事情報 ・ 物販入荷状況を毎日深夜にクロール。総合スコアを再計算し、ランキングを更新します。直近の急上昇は「🔥 HOT」「▲ UP」バッジで一目で分かります。</p>
+    </div>
+    <div class="countdown" id="countdown">
+      00:00:00
+      <small>NEXT UPDATE</small>
+    </div>
+  </div>
+
+  <div class="update-detail">
+    <div class="update-step">
+      <div class="step-num">01</div>
+      <h4>🕷 クロール（深夜2:00）</h4>
+      <p>各神社仏閣の公式サイト・SNSアカウントから最新データを取得。ホトカミ、各社寺公式 など 261アカウントを巡回。</p>
+    </div>
+    <div class="update-step">
+      <div class="step-num">02</div>
+      <h4>📐 スコア再計算（2:15）</h4>
+      <p>取得データを正規化し、4軸（SNS40%・行事25%・物販20%・参拝15%）で再計算。前日比でトレンド判定を付与。</p>
+    </div>
+    <div class="update-step">
+      <div class="step-num">03</div>
+      <h4>📦 配信（2:30）</h4>
+      <p>サイトに反映。トップページ・ランキング・SNS分析表・物販リストを一斉更新。CDNキャッシュも自動パージ。</p>
+    </div>
+  </div>
+
+  <div style="background:#fff;border:1px solid #e8e0d0;border-radius:10px;padding:18px;margin-top:18px;font-size:12px;color:var(--cha);line-height:1.7">
+    <strong style="color:var(--shu)">📡 技術スタック（参考）</strong>: Python (Scrapy/Playwright) でクロール → PostgreSQL に保存 → Node.js でスコア計算API → 静的サイトジェネレータ(Next.js)で再ビルド → Cloudflare CDN にデプロイ。月次でアルゴリズムをチューニングし、季節要因（初詣・節分・夏祭り・七五三）の重みを動的に調整します。
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div>
+      <h5>📚 データソース</h5>
+      <p>・ <a href="https://hotokami.jp/info/instagram/" target="_blank">ホトカミ｜神社お寺のInstagramアカウントまとめ（3,065件）</a></p>
+      <p>・ <a href="https://www.naritasan.or.jp/" target="_blank">大本山成田山新勝寺 公式サイト</a></p>
+      <p>・ <a href="https://www.naritasan.or.jp/monthly/gyoji_year/" target="_blank">成田山 年間行事ページ</a></p>
+      <p>・ <a href="https://www.naritasan.or.jp/area/" target="_blank">成田山 全国別院一覧</a></p>
+      <p>・ <a href="https://www.isejingu.or.jp/" target="_blank">伊勢神宮 公式サイト</a></p>
+      <p>・ 各神社仏閣公式サイト ・ 各SNSプラットフォーム公開情報</p>
+    </div>
+    <div>
+      <h5>📝 免責事項</h5>
+      <div class="disclaimer">
+        本サイトは比較・情報集約を目的とした非公式まとめです。SNSフォロワー数・閲覧数の数値はクロール時点の公開情報を集約したもので、リアルタイム値と差異がある場合があります。「平均閲覧」「口コミ件数」は参考値で、実際の数値は各SNS・公式サイトでご確認ください。掲載する各リンク先のコンテンツ責任は各運営者に帰属します。
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 全国神社仏閣まとめ ・ Shrines & Temples Matome ｜ 非公式情報集約サイト ・ 日次自動更新システム稼働中
+  </div>
+</footer>
+
+<script>
+// ====== Date display ======
+function updateHeaderDate(){
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = String(now.getMonth()+1).padStart(2,'0');
+  const d = String(now.getDate()).padStart(2,'0');
+  const hh = String(now.getHours()).padStart(2,'0');
+  const mm = String(now.getMinutes()).padStart(2,'0');
+  document.getElementById('header-date').textContent = `${y}/${m}/${d}`;
+  document.getElementById('last-crawl').textContent = `${y}/${m}/${d} 02:30`;
+}
+updateHeaderDate();
+
+// ====== Countdown to next 2 AM JST ======
+function updateCountdown(){
+  const now = new Date();
+  const next = new Date(now);
+  next.setHours(2,0,0,0);
+  if(next <= now) next.setDate(next.getDate()+1);
+  const diff = next - now;
+  const h = Math.floor(diff / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  const el = document.getElementById('countdown');
+  if(el){
+    el.innerHTML = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}<small>NEXT UPDATE</small>`;
+  }
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+// ====== Refresh button ======
+document.getElementById('refresh-btn').addEventListener('click', function(){
+  const btn = this;
+  const orig = btn.innerHTML;
+  btn.innerHTML = '🔄 取得中...';
+  btn.classList.add('flashing');
+  btn.disabled = true;
+  setTimeout(()=>{
+    btn.innerHTML = '✓ 最新です';
+    setTimeout(()=>{
+      btn.innerHTML = orig;
+      btn.classList.remove('flashing');
+      btn.disabled = false;
+    }, 1500);
+  }, 900);
+});
+
+// ====== Merch filter ======
+document.querySelectorAll('.merch-tab').forEach(tab=>{
+  tab.addEventListener('click', function(){
+    document.querySelectorAll('.merch-tab').forEach(t=>t.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.dataset.filter;
+    document.querySelectorAll('.merch-card').forEach(card=>{
+      const cats = (card.dataset.cat || '').split(' ');
+      if(filter === 'all' || cats.includes(filter)){
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// ====== Comparison filter ======
+document.getElementById('comp-cat').addEventListener('change', function(){
+  const v = this.value;
+  document.querySelectorAll('#comp-table tbody tr').forEach(tr=>{
+    if(v === 'all' || tr.dataset.cat === v) tr.style.display = '';
+    else tr.style.display = 'none';
+  });
+});
+
+// ====== SNS table sort ======
+document.querySelectorAll('#sns-table th.sortable').forEach(th=>{
+  th.addEventListener('click', function(){
+    const col = parseInt(this.dataset.col);
+    const tbody = document.querySelector('#sns-table tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    rows.sort((a,b)=>{
+      const av = parseFloat(a.cells[col].dataset.num || '0');
+      const bv = parseFloat(b.cells[col].dataset.num || '0');
+      return bv - av;
+    });
+    rows.forEach(r=>tbody.appendChild(r));
+  });
+});
+
+// ====== Smooth scroll fix for sticky nav ======
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', function(e){
+    const href = this.getAttribute('href');
+    if(href.length > 1){
+      const target = document.querySelector(href);
+      if(target){
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.pageYOffset - 60;
+        window.scrollTo({top, behavior:'smooth'});
+      }
+    }
+  });
+});
+
+// ====== Periodic visual refresh of timestamps ======
+setInterval(updateHeaderDate, 60000);
+</script>
+
+</body>
+</html>
