@@ -587,6 +587,21 @@ section{padding:40px 0}
 }
 .sns-table a.sns-link:hover{background:var(--shu);color:#fff}
 .sns-table .na{color:#aaa;font-size:11px}
+.sns-table a.map-link{
+  color:#fff;font-weight:700;font-size:11px;
+  display:inline-block;
+  background:linear-gradient(135deg,#4285F4,#1A73E8);
+  padding:3px 8px;border-radius:4px;
+  white-space:nowrap;
+  box-shadow:0 1px 3px rgba(26,115,232,.3);
+  transition:.2s;
+}
+.sns-table a.map-link:hover{
+  background:linear-gradient(135deg,#1A73E8,#0F4FB1);
+  transform:translateY(-1px);
+  box-shadow:0 3px 8px rgba(26,115,232,.5);
+}
+.sns-table td.map-cell{text-align:center}
 
 /* ===== Viral posts ===== */
 .viral-grid{
@@ -726,7 +741,114 @@ section{padding:40px 0}
   font-size:13px;font-weight:700;color:var(--sumi);
 }
 
-/* ===== Auto-update ===== */
+/* ===== Goriyaku (Benefits) ===== */
+.goriyaku-hero{
+  background:linear-gradient(135deg,var(--kin) 0%,var(--kin-light) 50%,var(--kin) 100%);
+  color:var(--sumi);
+  padding:30px 24px;border-radius:16px;
+  text-align:center;margin-bottom:28px;
+  position:relative;overflow:hidden;
+  box-shadow:var(--shadow-strong);
+}
+.goriyaku-hero::before{
+  content:"🙏";position:absolute;font-size:240px;
+  right:-40px;top:-60px;opacity:.08;line-height:1;
+}
+.goriyaku-hero::after{
+  content:"✨";position:absolute;font-size:200px;
+  left:-30px;bottom:-50px;opacity:.08;line-height:1;
+}
+.goriyaku-hero h3{
+  font-family:"Shippori Mincho B1",serif;
+  font-size:clamp(20px,3vw,28px);font-weight:800;
+  margin-bottom:8px;color:var(--shu-dark);
+  position:relative;z-index:1;
+}
+.goriyaku-hero p{font-size:13px;color:var(--sumi);position:relative;z-index:1}
+
+.goriyaku-filter{
+  display:flex;gap:8px;flex-wrap:wrap;
+  margin-bottom:24px;justify-content:center;
+}
+.gori-tab{
+  background:#fff;border:2px solid var(--shu);
+  color:var(--shu);padding:8px 16px;border-radius:999px;
+  font-weight:700;font-size:12px;cursor:pointer;
+  font-family:inherit;transition:.2s;
+}
+.gori-tab:hover{background:rgba(196,30,58,.08)}
+.gori-tab.active{background:var(--shu);color:#fff;box-shadow:0 3px 10px rgba(196,30,58,.3)}
+
+.goriyaku-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+}
+@media(max-width:900px){.goriyaku-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.goriyaku-grid{grid-template-columns:1fr}}
+
+.gori-card{
+  background:#fff;border-radius:14px;
+  border:1px solid #e8e0d0;padding:20px;
+  position:relative;overflow:hidden;
+  transition:.25s;
+  border-top:4px solid var(--shu);
+  display:flex;flex-direction:column;
+}
+.gori-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-strong);
+  border-top-color:var(--kin);
+}
+.gori-card::before{
+  content:"";position:absolute;top:0;right:0;
+  width:80px;height:80px;
+  background:radial-gradient(circle at top right,rgba(212,160,23,.1),transparent 70%);
+  pointer-events:none;
+}
+.gori-num{
+  position:absolute;top:12px;right:14px;
+  font-family:"Bebas Neue",sans-serif;
+  font-size:32px;color:var(--shu);opacity:.2;
+  line-height:1;
+}
+.gori-cat-badge{
+  display:inline-block;
+  font-size:10px;font-weight:700;
+  padding:3px 8px;border-radius:999px;
+  margin-bottom:8px;letter-spacing:.05em;
+}
+.gori-cat-badge.jinja{background:rgba(196,30,58,.1);color:var(--shu)}
+.gori-cat-badge.tera{background:rgba(107,68,35,.1);color:var(--cha)}
+.gori-card h4{
+  font-family:"Shippori Mincho B1",serif;
+  font-size:18px;font-weight:800;
+  color:var(--sumi);margin-bottom:4px;
+  line-height:1.3;
+}
+.gori-location{
+  font-size:11px;color:var(--cha);margin-bottom:12px;
+  letter-spacing:.05em;
+}
+.gori-benefits{
+  background:linear-gradient(135deg,rgba(196,30,58,.04),rgba(212,160,23,.04));
+  border-left:3px solid var(--shu);
+  padding:10px 12px;border-radius:0 6px 6px 0;
+  margin-bottom:10px;
+}
+.gori-benefits-label{
+  font-size:10px;font-weight:700;color:var(--shu);
+  letter-spacing:.1em;margin-bottom:4px;
+}
+.gori-benefits-text{
+  font-size:13px;font-weight:700;color:var(--sumi);
+  line-height:1.5;
+}
+.gori-deity{
+  font-size:11px;color:var(--cha);line-height:1.5;
+  font-style:italic;flex-grow:1;
+}
+.gori-deity::before{content:"✦ "}
+
+
 .update-box{
   background:linear-gradient(135deg,#fff,var(--washi));
   border:2px dashed var(--shu);border-radius:14px;
@@ -841,6 +963,7 @@ footer a{color:var(--kin-light);text-decoration:underline}
     <a href="#viral">🔥 バズ投稿</a>
     <a href="#merch">🛍 物販</a>
     <a href="#comp">📊 一覧比較</a>
+    <a href="#goriyaku">🙏 ご利益 <span class="badge-mini">NEW</span></a>
     <a href="#update">🔄 自動更新</a>
   </div>
 </nav>
@@ -1997,6 +2120,7 @@ footer a{color:var(--kin-light);text-decoration:underline}
           <th>順位</th>
           <th>名称</th>
           <th>所在地</th>
+          <th>地図</th>
           <th>種別</th>
           <th>スコア</th>
           <th>IG</th>
@@ -2008,26 +2132,26 @@ footer a{color:var(--kin-light);text-decoration:underline}
         </tr>
       </thead>
       <tbody>
-        <tr data-cat="jinja"><td>1</td><td class="temple-name">伊勢神宮</td><td>三重</td><td>神宮</td><td class="num-cell">94.7</td><td class="num-cell">66.6万</td><td>—</td><td>—</td><td>30</td><td>800万</td><td><a href="https://www.isejingu.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/isejingu.official/" target="_blank" class="sns-link">IG</a></td></tr>
-        <tr data-cat="tera"><td>2</td><td class="temple-name">清水寺</td><td>京都</td><td>寺</td><td class="num-cell">89.2</td><td class="num-cell">16.9万</td><td>—</td><td>—</td><td>14</td><td>500万</td><td><a href="https://www.kiyomizudera.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/feel_kiyomizudera/" target="_blank" class="sns-link">IG</a></td></tr>
-        <tr data-cat="jinja"><td>3</td><td class="temple-name">明治神宮</td><td>東京</td><td>神宮</td><td class="num-cell">87.5</td><td class="num-cell">約500*</td><td class="num-cell">477</td><td>—</td><td>22</td><td>319万</td><td><a href="https://www.meijijingu.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/meijijingu_sukeikai/" target="_blank" class="sns-link">IG</a><a href="https://x.com/meijijingu_s" target="_blank" class="sns-link">𝕏</a></td></tr>
-        <tr data-cat="tera"><td>4</td><td class="temple-name">成田山新勝寺</td><td>千葉</td><td>寺</td><td class="num-cell">85.8</td><td class="num-cell">1.3万</td><td class="num-cell">2.8K</td><td>—</td><td>28</td><td>1,000万</td><td><a href="https://www.naritasan.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/naritasan_official/" target="_blank" class="sns-link">IG</a><a href="https://x.com/narita_fudou" target="_blank" class="sns-link">𝕏</a></td></tr>
-        <tr data-cat="jinja"><td>5</td><td class="temple-name">出雲大社（出雲教）</td><td>島根</td><td>大社</td><td class="num-cell">82.4</td><td class="num-cell">3.2万</td><td>—</td><td>—</td><td>18</td><td>270万</td><td><a href="https://izumooyashiro.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/izumokyou/" target="_blank" class="sns-link">IG</a></td></tr>
-        <tr data-cat="jinja"><td>6</td><td class="temple-name">太宰府天満宮</td><td>福岡</td><td>神社</td><td class="num-cell">78.9</td><td class="num-cell">10.1万</td><td class="num-cell">2.2万</td><td>—</td><td>20</td><td>200万</td><td><a href="https://www.dazaifutenmangu.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/dazaifutenmangu.official/" target="_blank" class="sns-link">IG</a></td></tr>
-        <tr data-cat="jinja"><td>7</td><td class="temple-name">蛇窪神社</td><td>東京</td><td>神社</td><td class="num-cell">76.3</td><td class="num-cell">2.9万</td><td class="num-cell">6.5K</td><td class="num-cell">1.4万</td><td>12</td><td>50万</td><td><a href="https://hebikubo.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/hebikubo_jinja_4412/" target="_blank" class="sns-link">IG</a><a href="https://x.com/hebikubojinja" target="_blank" class="sns-link">𝕏</a></td></tr>
-        <tr data-cat="jinja"><td>8</td><td class="temple-name">小網神社</td><td>東京</td><td>神社</td><td class="num-cell">74.1</td><td class="num-cell">9.7万</td><td>—</td><td>—</td><td>8</td><td>30万</td><td><a href="https://www.koamijinja.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/koamijinja_official/" target="_blank" class="sns-link">IG</a></td></tr>
-        <tr data-cat="jinja"><td>9</td><td class="temple-name">東郷神社</td><td>東京</td><td>神社</td><td class="num-cell">72.6</td><td class="num-cell">1.3万</td><td>—</td><td class="num-cell">1.1万</td><td>10</td><td>40万</td><td><a href="https://togojinja.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/togoshrine/" target="_blank" class="sns-link">IG</a></td></tr>
-        <tr data-cat="jinja"><td>10</td><td class="temple-name">須賀神社</td><td>東京</td><td>神社</td><td class="num-cell">70.8</td><td class="num-cell">2,670</td><td>—</td><td>—</td><td>9</td><td>20万</td><td><a href="https://sugajinjya.org/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/sugajinjya_info/" target="_blank" class="sns-link">IG</a></td></tr>
-        <tr data-cat="jinja"><td>11</td><td class="temple-name">貴船神社</td><td>京都</td><td>神社</td><td class="num-cell">68.4</td><td class="num-cell">8.5万</td><td>—</td><td>—</td><td>11</td><td>25万</td><td><a href="https://kifunejinja.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/kifunejinja/" target="_blank" class="sns-link">IG</a></td></tr>
-        <tr data-cat="jinja"><td>12</td><td class="temple-name">晴明神社</td><td>京都</td><td>神社</td><td class="num-cell">67.1</td><td class="num-cell">8.9万</td><td class="num-cell">1.8万</td><td>—</td><td>8</td><td>15万</td><td><a href="https://www.seimeijinja.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/seimeijinja/" target="_blank" class="sns-link">IG</a><a href="https://x.com/seimeijinja" target="_blank" class="sns-link">𝕏</a></td></tr>
-        <tr data-cat="jinja"><td>13</td><td class="temple-name">川越氷川神社</td><td>埼玉</td><td>神社</td><td class="num-cell">65.8</td><td class="num-cell">5.7万</td><td class="num-cell">1.2万</td><td class="num-cell">8.5K</td><td>15</td><td>80万</td><td><a href="https://www.kawagoehikawa.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/kawagoe_hikawa/" target="_blank" class="sns-link">IG</a></td></tr>
-        <tr data-cat="jinja"><td>14</td><td class="temple-name">三峯神社</td><td>埼玉</td><td>神社</td><td class="num-cell">63.2</td><td class="num-cell">7.1万</td><td>—</td><td>—</td><td>10</td><td>40万</td><td><a href="https://www.mitsuminejinja.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/mitsuminejinja/" target="_blank" class="sns-link">IG</a></td></tr>
-        <tr data-cat="tera"><td>15</td><td class="temple-name">奈良 長谷寺</td><td>奈良</td><td>寺</td><td class="num-cell">62.4</td><td class="num-cell">6.8万</td><td>—</td><td>—</td><td>12</td><td>60万</td><td><a href="https://www.hasedera.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/hase_dera/" target="_blank" class="sns-link">IG</a></td></tr>
-        <tr data-cat="tera"><td>16</td><td class="temple-name">東大寺</td><td>奈良</td><td>寺</td><td class="num-cell">79.6</td><td class="num-cell">6.8万</td><td class="num-cell">4.4万</td><td>—</td><td>16</td><td>200万</td><td><a href="https://www.todaiji.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/todaiji.official/" target="_blank" class="sns-link">IG</a><a href="https://x.com/todaiji" target="_blank" class="sns-link">𝕏</a></td></tr>
-        <tr data-cat="jinja"><td>17</td><td class="temple-name">春日大社</td><td>奈良</td><td>大社</td><td class="num-cell">75.2</td><td class="num-cell">4.0万</td><td>—</td><td>—</td><td>14</td><td>150万</td><td><a href="https://www.kasugataisha.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/kasugataisha.official/" target="_blank" class="sns-link">IG</a></td></tr>
-        <tr data-cat="jinja"><td>18</td><td class="temple-name">八坂神社（京都祇園）</td><td>京都</td><td>神社</td><td class="num-cell">81.3</td><td class="num-cell">2.9万</td><td>—</td><td>—</td><td>18</td><td>180万</td><td><a href="https://www.yasaka-jinja.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/kyotogionyasaka/" target="_blank" class="sns-link">IG</a></td></tr>
-        <tr data-cat="jinja"><td>19</td><td class="temple-name">鶴岡八幡宮</td><td>神奈川</td><td>神社</td><td class="num-cell">73.4</td><td class="num-cell">4.2万</td><td>—</td><td>—</td><td>16</td><td>250万</td><td><a href="https://www.tsurugaokahachimangu.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/tsurugaoka_official/" target="_blank" class="sns-link">IG</a></td></tr>
-        <tr data-cat="tera"><td>20</td><td class="temple-name">浅草寺</td><td>東京</td><td>寺</td><td class="num-cell">80.5</td><td class="num-cell">9,283</td><td class="num-cell">3,176</td><td>—</td><td>14</td><td>282万</td><td><a href="https://www.senso-ji.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/sensouji_official/" target="_blank" class="sns-link">IG</a><a href="https://x.com/sensouji_O" target="_blank" class="sns-link">𝕏</a></td></tr>
+        <tr data-cat="jinja"><td>1</td><td class="temple-name">伊勢神宮</td><td>三重</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E7%9A%87%E5%A4%A7%E7%A5%9E%E5%AE%AE%EF%BC%88%E4%BC%8A%E5%8B%A2%E7%A5%9E%E5%AE%AE+%E5%86%85%E5%AE%AE%EF%BC%89/@34.4550201,136.7226102,17z/data=!3m1!4b1!4m6!3m5!1s0x600450ebdf9f37f3:0xf009663753f60ca7!8m2!3d34.4550157!4d136.7251851!16zL20vMDJyX2c0" target="_blank" class="map-link">📍 地図</a></td><td>神宮</td><td class="num-cell">94.7</td><td class="num-cell">66.6万</td><td>—</td><td>—</td><td>30</td><td>800万</td><td><a href="https://www.isejingu.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/isejingu.official/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="tera"><td>2</td><td class="temple-name">清水寺</td><td>京都</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E6%B8%85%E6%B0%B4%E5%AF%BA/@34.9946706,135.7820861,17z/data=!3m1!4b1!4m6!3m5!1s0x600108d385dcfb07:0x62af658650c434ba!8m2!3d34.9946662!4d135.784661!16zL20vMDJ5bjNn" target="_blank" class="map-link">📍 地図</a></td><td>寺</td><td class="num-cell">89.2</td><td class="num-cell">16.9万</td><td>—</td><td>—</td><td>14</td><td>500万</td><td><a href="https://www.kiyomizudera.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/feel_kiyomizudera/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>3</td><td class="temple-name">明治神宮</td><td>東京</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE/@35.6764019,139.696751,17z/data=!3m1!4b1!4m6!3m5!1s0x60188cb79a4c26e5:0x8fca893849103f73!8m2!3d35.6763976!4d139.6993259!16zL20vMDFxX2s5" target="_blank" class="map-link">📍 地図</a></td><td>神宮</td><td class="num-cell">87.5</td><td class="num-cell">約500*</td><td class="num-cell">477</td><td>—</td><td>22</td><td>319万</td><td><a href="https://www.meijijingu.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/meijijingu_sukeikai/" target="_blank" class="sns-link">IG</a><a href="https://x.com/meijijingu_s" target="_blank" class="sns-link">𝕏</a></td></tr>
+        <tr data-cat="tera"><td>4</td><td class="temple-name">成田山新勝寺</td><td>千葉</td><td class="map-cell"><a href="https://www.google.co.jp/maps/search/%E6%88%90%E7%94%B0%E5%B1%B1%E6%96%B0%E5%8B%9D%E5%AF%BA/@35.785352,140.3156039,17z/data=!3m1!4b1" target="_blank" class="map-link">📍 地図</a></td><td>寺</td><td class="num-cell">85.8</td><td class="num-cell">1.3万</td><td class="num-cell">2.8K</td><td>—</td><td>28</td><td>1,000万</td><td><a href="https://www.naritasan.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/naritasan_official/" target="_blank" class="sns-link">IG</a><a href="https://x.com/narita_fudou" target="_blank" class="sns-link">𝕏</a></td></tr>
+        <tr data-cat="jinja"><td>5</td><td class="temple-name">出雲大社（出雲教）</td><td>島根</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E5%87%BA%E9%9B%B2%E5%A4%A7%E7%A4%BE/@35.4018735,132.6828944,17z/data=!3m1!4b1!4m6!3m5!1s0x35575c942a56193d:0x706a6aaefcba84ef!8m2!3d35.4018692!4d132.6854693!16zL20vMDN6Znk2" target="_blank" class="map-link">📍 地図</a></td><td>大社</td><td class="num-cell">82.4</td><td class="num-cell">3.2万</td><td>—</td><td>—</td><td>18</td><td>270万</td><td><a href="https://izumooyashiro.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/izumokyou/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>6</td><td class="temple-name">太宰府天満宮</td><td>福岡</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E5%A4%AA%E5%AE%B0%E5%BA%9C%E5%A4%A9%E6%BA%80%E5%AE%AE/@33.5213741,130.532249,17z/data=!3m1!4b1!4m6!3m5!1s0x35419b9f2aebfbcd:0xb824d1aba75fae97!8m2!3d33.5213697!4d130.5348239!16zL20vMDd2XzAz" target="_blank" class="map-link">📍 地図</a></td><td>神社</td><td class="num-cell">78.9</td><td class="num-cell">10.1万</td><td class="num-cell">2.2万</td><td>—</td><td>20</td><td>200万</td><td><a href="https://www.dazaifutenmangu.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/dazaifutenmangu.official/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>7</td><td class="temple-name">蛇窪神社</td><td>東京</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E8%9B%87%E7%AA%AA%E7%A5%9E%E7%A4%BE/@35.6026024,139.7126188,17z/data=!3m1!4b1!4m6!3m5!1s0x60188a9714db4759:0x109834ee4ed8a923!8m2!3d35.6025981!4d139.7151937!16s%2Fg%2F121zcfbs" target="_blank" class="map-link">📍 地図</a></td><td>神社</td><td class="num-cell">76.3</td><td class="num-cell">2.9万</td><td class="num-cell">6.5K</td><td class="num-cell">1.4万</td><td>12</td><td>50万</td><td><a href="https://hebikubo.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/hebikubo_jinja_4412/" target="_blank" class="sns-link">IG</a><a href="https://x.com/hebikubojinja" target="_blank" class="sns-link">𝕏</a></td></tr>
+        <tr data-cat="jinja"><td>8</td><td class="temple-name">小網神社</td><td>東京</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E5%B0%8F%E7%B6%B2%E7%A5%9E%E7%A4%BE/@35.6841208,139.7778871,17z/data=!3m1!4b1!4m6!3m5!1s0x60188950f64b8f99:0xc0cb3994d27227df!8m2!3d35.6841165!4d139.780462!16s%2Fg%2F1tcz898m" target="_blank" class="map-link">📍 地図</a></td><td>神社</td><td class="num-cell">74.1</td><td class="num-cell">9.7万</td><td>—</td><td>—</td><td>8</td><td>30万</td><td><a href="https://www.koamijinja.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/koamijinja_official/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>9</td><td class="temple-name">東郷神社</td><td>東京</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E6%9D%B1%E9%83%B7%E7%A5%9E%E7%A4%BE/@35.6717445,139.703269,17z/data=!3m1!4b1!4m6!3m5!1s0x60188cbb44148d5b:0xc0625df2fd2a8e82!8m2!3d35.6717402!4d139.7058439!16zL20vMDZ0bXNk" target="_blank" class="map-link">📍 地図</a></td><td>神社</td><td class="num-cell">72.6</td><td class="num-cell">1.3万</td><td>—</td><td class="num-cell">1.1万</td><td>10</td><td>40万</td><td><a href="https://togojinja.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/togoshrine/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>10</td><td class="temple-name">須賀神社</td><td>東京</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E6%9D%B1%E4%BA%AC%E5%9B%9B%E8%B0%B7%E7%B7%8F%E9%8E%AE%E5%AE%88+%E9%A0%88%E8%B3%80%E7%A5%9E%E7%A4%BE/@35.6852894,139.7199034,17z/data=!3m2!4b1!5s0x60188c8d6f4217f7:0x8f4392e17c562e0!4m6!3m5!1s0x6018ece406d552f1:0x440be600a9c6807c!8m2!3d35.6852851!4d139.7224783!16s%2Fg%2F122zd6vx" target="_blank" class="map-link">📍 地図</a></td><td>神社</td><td class="num-cell">70.8</td><td class="num-cell">2,670</td><td>—</td><td>—</td><td>9</td><td>20万</td><td><a href="https://sugajinjya.org/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/sugajinjya_info/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>11</td><td class="temple-name">貴船神社</td><td>京都</td><td class="map-cell"><a href="https://www.google.co.jp/maps/search/%E8%B2%B4%E8%88%B9%E7%A5%9E%E7%A4%BE/@35.1254316,135.7615019,17z/data=!3m1!4b1" target="_blank" class="map-link">📍 地図</a></td><td>神社</td><td class="num-cell">68.4</td><td class="num-cell">8.5万</td><td>—</td><td>—</td><td>11</td><td>25万</td><td><a href="https://kifunejinja.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/kifunejinja/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>12</td><td class="temple-name">晴明神社</td><td>京都</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E6%99%B4%E6%98%8E%E7%A5%9E%E7%A4%BE/@35.0277644,135.7486053,17z/data=!3m1!4b1!4m6!3m5!1s0x600107df798f7951:0xf28aea911a6811d0!8m2!3d35.02776!4d135.7511802!16s%2Fm%2F063yvtj" target="_blank" class="map-link">📍 地図</a></td><td>神社</td><td class="num-cell">67.1</td><td class="num-cell">8.9万</td><td class="num-cell">1.8万</td><td>—</td><td>8</td><td>15万</td><td><a href="https://www.seimeijinja.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/seimeijinja/" target="_blank" class="sns-link">IG</a><a href="https://x.com/seimeijinja" target="_blank" class="sns-link">𝕏</a></td></tr>
+        <tr data-cat="jinja"><td>13</td><td class="temple-name">川越氷川神社</td><td>埼玉</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E5%B7%9D%E8%B6%8A%E6%B0%B7%E5%B7%9D%E7%A5%9E%E7%A4%BE/@35.9275541,139.4859839,17z/data=!3m2!4b1!5s0x6018da899118ea65:0x4d1463f3713d26f7!4m6!3m5!1s0x6018da89ead23633:0x7fce7ee6a490f05c!8m2!3d35.9275498!4d139.4885588!16s%2Fg%2F1211cdlp" target="_blank" class="map-link">📍 地図</a></td><td>神社</td><td class="num-cell">65.8</td><td class="num-cell">5.7万</td><td class="num-cell">1.2万</td><td class="num-cell">8.5K</td><td>15</td><td>80万</td><td><a href="https://www.kawagoehikawa.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/kawagoe_hikawa/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>14</td><td class="temple-name">三峯神社</td><td>埼玉</td><td class="map-cell"><a href="https://www.google.co.jp/maps/search/%E4%B8%89%E5%B3%AF%E7%A5%9E%E7%A4%BE/@35.9254539,138.6256013,11z" target="_blank" class="map-link">📍 地図</a></td><td>神社</td><td class="num-cell">63.2</td><td class="num-cell">7.1万</td><td>—</td><td>—</td><td>10</td><td>40万</td><td><a href="https://www.mitsuminejinja.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/mitsuminejinja/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="tera"><td>15</td><td class="temple-name">奈良 長谷寺</td><td>奈良</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E9%95%B7%E8%B0%B7%E5%AF%BA/@34.5358894,135.9042191,17z/data=!3m1!4b1!4m6!3m5!1s0x6006b559185419c3:0x6efdea9eee003130!8m2!3d34.535885!4d135.906794!16zL20vMDhncTg3" target="_blank" class="map-link">📍 地図</a></td><td>寺</td><td class="num-cell">62.4</td><td class="num-cell">6.8万</td><td>—</td><td>—</td><td>12</td><td>60万</td><td><a href="https://www.hasedera.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/hase_dera/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="tera"><td>16</td><td class="temple-name">東大寺</td><td>奈良</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E6%9D%B1%E5%A4%A7%E5%AF%BA/@34.6889895,135.8372409,17z/data=!3m1!4b1!4m6!3m5!1s0x600139907a0876dd:0xf890ac3f9dd53c8f!8m2!3d34.6889851!4d135.8398158!16zL20vMDJoNnR3" target="_blank" class="map-link">📍 地図</a></td><td>寺</td><td class="num-cell">79.6</td><td class="num-cell">6.8万</td><td class="num-cell">4.4万</td><td>—</td><td>16</td><td>200万</td><td><a href="https://www.todaiji.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/todaiji.official/" target="_blank" class="sns-link">IG</a><a href="https://x.com/todaiji" target="_blank" class="sns-link">𝕏</a></td></tr>
+        <tr data-cat="jinja"><td>17</td><td class="temple-name">春日大社</td><td>奈良</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E6%98%A5%E6%97%A5%E5%A4%A7%E7%A4%BE/@34.6815498,135.845897,17z/data=!3m1!4b1!4m6!3m5!1s0x600139c06bb06ad5:0x4c97e78382e39596!8m2!3d34.6815454!4d135.8484719!16zL20vMDNrMnpo" target="_blank" class="map-link">📍 地図</a></td><td>大社</td><td class="num-cell">75.2</td><td class="num-cell">4.0万</td><td>—</td><td>—</td><td>14</td><td>150万</td><td><a href="https://www.kasugataisha.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/kasugataisha.official/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>18</td><td class="temple-name">八坂神社（京都祇園）</td><td>京都</td><td class="map-cell"><a href="https://www.google.co.jp/maps/place/%E5%85%AB%E5%9D%82%E7%A5%9E%E7%A4%BE/@35.0036603,135.7759785,17z/data=!3m1!4b1!4m6!3m5!1s0x60010879a010eca9:0xc77ac89d5a241ae9!8m2!3d35.0036559!4d135.7785534!16zL20vMDVkZGds" target="_blank" class="map-link">📍 地図</a></td><td>神社</td><td class="num-cell">81.3</td><td class="num-cell">2.9万</td><td>—</td><td>—</td><td>18</td><td>180万</td><td><a href="https://www.yasaka-jinja.or.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/kyotogionyasaka/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="jinja"><td>19</td><td class="temple-name">鶴岡八幡宮</td><td>神奈川</td><td class="map-cell"><a href="https://www.google.co.jp/maps/search/%E9%B6%B4%E5%B2%A1%E5%85%AB%E5%B9%A1%E5%AE%AE/@35.3234266,139.5519417,17z" target="_blank" class="map-link">📍 地図</a></td><td>神社</td><td class="num-cell">73.4</td><td class="num-cell">4.2万</td><td>—</td><td>—</td><td>16</td><td>250万</td><td><a href="https://www.tsurugaokahachimangu.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/tsurugaoka_official/" target="_blank" class="sns-link">IG</a></td></tr>
+        <tr data-cat="tera"><td>20</td><td class="temple-name">浅草寺</td><td>東京</td><td class="map-cell"><a href="https://www.google.co.jp/maps/search/%E6%B5%85%E8%8D%89%E5%AF%BA/@35.7131059,139.7938186,17z/data=!3m1!4b1" target="_blank" class="map-link">📍 地図</a></td><td>寺</td><td class="num-cell">80.5</td><td class="num-cell">9,283</td><td class="num-cell">3,176</td><td>—</td><td>14</td><td>282万</td><td><a href="https://www.senso-ji.jp/" target="_blank" class="sns-link">🌐</a><a href="https://www.instagram.com/sensouji_official/" target="_blank" class="sns-link">IG</a><a href="https://x.com/sensouji_O" target="_blank" class="sns-link">𝕏</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -2035,6 +2159,271 @@ footer a{color:var(--kin-light);text-decoration:underline}
   <div style="margin-top:14px;padding:12px 16px;background:linear-gradient(135deg,rgba(196,30,58,.06),rgba(212,160,23,.06));border-left:4px solid var(--shu);border-radius:6px;font-size:13px;color:var(--sumi)">
     📐 <strong>スコア欄について</strong>：表中の「スコア」列の算出方法（重み付け・指標の定義）は <a href="#formula" style="color:var(--shu);font-weight:700;text-decoration:underline">「📐 総合スコア 算出ロジック」</a> セクションを参照してください。
   </div>
+</section>
+
+<!-- Goriyaku (Benefits) -->
+<section id="goriyaku" class="container">
+  <div class="sec-title">
+    <h2>🙏 ご利益一覧</h2>
+    <span class="en">DIVINE BENEFITS &amp; BLESSINGS</span>
+  </div>
+
+  <div class="goriyaku-hero">
+    <h3>✨ 各神社仏閣のご利益・ご祭神まとめ</h3>
+    <p>全国20社寺のご利益・ご祭神（御本尊）を一覧で確認。願い事に合わせて、参拝先をお選びください。</p>
+  </div>
+
+  <div class="goriyaku-filter">
+    <button class="gori-tab active" data-filter="all">すべて</button>
+    <button class="gori-tab" data-filter="jinja">⛩ 神社</button>
+    <button class="gori-tab" data-filter="tera">卍 お寺</button>
+  </div>
+
+  <div class="goriyaku-grid">
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">01</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>伊勢神宮</h4>
+      <div class="gori-location">📍 三重県伊勢市</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">国家安泰・家内安全・全体運</div>
+      </div>
+      <div class="gori-deity">すべての願いの総氏神</div>
+    </div>
+
+    <div class="gori-card" data-cat="tera">
+      <span class="gori-num">02</span>
+      <span class="gori-cat-badge tera">卍 お寺</span>
+      <h4>清水寺</h4>
+      <div class="gori-location">📍 京都府京都市</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">無病息災・立身出世・良縁成就</div>
+      </div>
+      <div class="gori-deity">十一面千手観音菩薩</div>
+    </div>
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">03</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>太宰府天満宮</h4>
+      <div class="gori-location">📍 福岡県太宰府市</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">学業成就・受験合格・厄除け</div>
+      </div>
+      <div class="gori-deity">菅原道真公</div>
+    </div>
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">04</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>小網神社</h4>
+      <div class="gori-location">📍 東京都中央区</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">強運厄除・財運向上</div>
+      </div>
+      <div class="gori-deity">銭洗いの弁天さま</div>
+    </div>
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">05</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>晴明神社</h4>
+      <div class="gori-location">📍 京都府京都市</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">魔除け・厄除け・病気平癒</div>
+      </div>
+      <div class="gori-deity">陰陽師・安倍晴明公</div>
+    </div>
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">06</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>貴船神社</h4>
+      <div class="gori-location">📍 京都府京都市</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">縁結び・諸願成就・運気隆昌</div>
+      </div>
+      <div class="gori-deity">水の神様</div>
+    </div>
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">07</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>三峯神社</h4>
+      <div class="gori-location">📍 埼玉県秩父市</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">明確な願望成就・金運・家内安全</div>
+      </div>
+      <div class="gori-deity">神の使いである「狼」の霊力</div>
+    </div>
+
+    <div class="gori-card" data-cat="tera">
+      <span class="gori-num">08</span>
+      <span class="gori-cat-badge tera">卍 お寺</span>
+      <h4>東大寺</h4>
+      <div class="gori-location">📍 奈良県奈良市</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">無病息災・疫病退散・世界平和</div>
+      </div>
+      <div class="gori-deity">奈良の大仏さま</div>
+    </div>
+
+    <div class="gori-card" data-cat="tera">
+      <span class="gori-num">09</span>
+      <span class="gori-cat-badge tera">卍 お寺</span>
+      <h4>奈良 長谷寺</h4>
+      <div class="gori-location">📍 奈良県桜井市</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">開運招福・諸願成就</div>
+      </div>
+      <div class="gori-deity">「わらしべ長者」の舞台・十一面観世音菩薩</div>
+    </div>
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">10</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>川越氷川神社</h4>
+      <div class="gori-location">📍 埼玉県川越市</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">縁結び・良縁成就・夫婦円満</div>
+      </div>
+      <div class="gori-deity">家族の神々を祀る</div>
+    </div>
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">11</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>鶴岡八幡宮</h4>
+      <div class="gori-location">📍 神奈川県鎌倉市</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">勝運向上・出世開運・家内安全</div>
+      </div>
+      <div class="gori-deity">源氏の氏神</div>
+    </div>
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">12</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>春日大社</h4>
+      <div class="gori-location">📍 奈良県奈良市</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">夫婦円満・良縁成就・開運厄除</div>
+      </div>
+      <div class="gori-deity">藤原氏の氏神</div>
+    </div>
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">13</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>出雲大社・出雲教</h4>
+      <div class="gori-location">📍 島根県出雲市</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">縁結び</div>
+      </div>
+      <div class="gori-deity">男女の縁だけでなく、あらゆる人・物の良い繋がり</div>
+    </div>
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">14</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>八坂神社</h4>
+      <div class="gori-location">📍 京都府京都市</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">厄除け・疫病退散・美容祈願</div>
+      </div>
+      <div class="gori-deity">境内にある「美御前社」の水</div>
+    </div>
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">15</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>蛇窪神社</h4>
+      <div class="gori-location">📍 東京都品川区</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">金運向上・白蛇の加護・財運白蛇</div>
+      </div>
+      <div class="gori-deity">「東京の白蛇様」</div>
+    </div>
+
+    <div class="gori-card" data-cat="tera">
+      <span class="gori-num">16</span>
+      <span class="gori-cat-badge tera">卍 お寺</span>
+      <h4>成田山新勝寺</h4>
+      <div class="gori-location">📍 千葉県成田市</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">厄除け・家内安全・交通安全</div>
+      </div>
+      <div class="gori-deity">お不動さまの御力</div>
+    </div>
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">17</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>東郷神社</h4>
+      <div class="gori-location">📍 東京都渋谷区</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">勝利・至誠・勝運</div>
+      </div>
+      <div class="gori-deity">「勝利の神様」東郷平八郎命</div>
+    </div>
+
+    <div class="gori-card" data-cat="tera">
+      <span class="gori-num">18</span>
+      <span class="gori-cat-badge tera">卍 お寺</span>
+      <h4>浅草寺</h4>
+      <div class="gori-location">📍 東京都台東区</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">諸願成就・所願成就</div>
+      </div>
+      <div class="gori-deity">人々のあらゆる願いを叶える聖観世音菩薩</div>
+    </div>
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">19</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>須賀神社</h4>
+      <div class="gori-location">📍 東京都新宿区四谷</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">良縁成就・悪霊退散</div>
+      </div>
+      <div class="gori-deity">映画「君の名は。」の聖地、四谷の守り神</div>
+    </div>
+
+    <div class="gori-card" data-cat="jinja">
+      <span class="gori-num">20</span>
+      <span class="gori-cat-badge jinja">⛩ 神社</span>
+      <h4>明治神宮</h4>
+      <div class="gori-location">📍 東京都渋谷区</div>
+      <div class="gori-benefits">
+        <div class="gori-benefits-label">主なご利益</div>
+        <div class="gori-benefits-text">家内安全・夫婦円満・世界平和</div>
+      </div>
+      <div class="gori-deity">明治天皇・昭憲皇太后</div>
+    </div>
+
+  </div>
+
+  <p style="font-size:11px;color:var(--cha);margin-top:18px;text-align:center">※ ご利益・ご祭神（御本尊）の表記は各社寺の公式サイト・公開情報に基づいています ・ 参拝の際は最新の情報を各社寺の公式サイトでご確認ください。</p>
 </section>
 
 <!-- Auto-update -->
@@ -2189,6 +2578,22 @@ document.querySelectorAll('#sns-table th.sortable').forEach(th=>{
       return bv - av;
     });
     rows.forEach(r=>tbody.appendChild(r));
+  });
+});
+
+// ====== Goriyaku filter ======
+document.querySelectorAll('.gori-tab').forEach(tab=>{
+  tab.addEventListener('click', function(){
+    document.querySelectorAll('.gori-tab').forEach(t=>t.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.dataset.filter;
+    document.querySelectorAll('.gori-card').forEach(card=>{
+      if(filter === 'all' || card.dataset.cat === filter){
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
   });
 });
 

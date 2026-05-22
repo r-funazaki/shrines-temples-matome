@@ -1,13 +1,28 @@
 {
-  "name": "shrines-temples-mock",
+  "name": "shrines-temples-matome-mock",
   "version": "1.0.0",
-  "description": "全国神社仏閣まとめサイトのモックサーバー（Node.js + Express）",
+  "description": "全国神社仏閣まとめ｜SNS・行事・物販 総合比較ランキング2026 のモックサイト",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "nodemon server.js"
   },
-  "engines": { "node": ">=18" },
-  "dependencies": { "express": "^4.19.2" },
-  "license": "MIT"
+  "keywords": [
+    "shrines",
+    "temples",
+    "japan",
+    "mock",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

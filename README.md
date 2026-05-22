@@ -1,91 +1,123 @@
-# 全国神社仏閣まとめ — Node.js モックサーバー
+# ⛩ 全国神社仏閣まとめ｜モックサイト
 
-添付HTMLをローカルでブラウザ表示するExpress製の最小サーバーです。
-**起動時に既定ブラウザが自動で開きます**。
+Express ベースの簡易モックサーバ。`shrines-temples-matome.html` を `public/index.html` として配信します。
 
 ---
 
 ## 📁 ファイル構成
 
 ```
-shrines-temples-mock/
-├── package.json          # 依存定義（express のみ）
-├── server.js             # Expressサーバー本体
-├── public/
-│   └── index.html        # 添付HTML
-└── README.md             # 本ファイル
+mock-site/
+├── package.json        # 依存関係・npmスクリプト
+├── server.js           # Expressサーバ本体
+├── README.md           # このファイル
+└── public/
+    └── index.html      # 表示用HTML（shrines-temples-matome.html）
 ```
 
 ---
 
-## 🛠 前提
+## 🚀 起動手順
 
-- Node.js **18 以上**（推奨: 20.x / 22.x LTS）
-- 確認: `node -v` / `npm -v`
-- 未導入なら <https://nodejs.org/ja>
+### 1. Node.js のインストール確認
 
----
-
-## 🚀 起動手順（3ステップ）
+Node.js 18 以上が必要です。
 
 ```bash
-# 1. 解凍後フォルダへ移動
-cd shrines-temples-mock
+node -v   # v18.x.x 以上であればOK
+npm -v
+```
 
-# 2. 依存インストール（初回のみ）
+未インストールの場合は [公式サイト](https://nodejs.org/) からLTS版を取得してください。
+
+### 2. 依存関係のインストール
+
+`mock-site/` ディレクトリで実行：
+
+```bash
 npm install
+```
 
-# 3. サーバー起動 → ブラウザ自動オープン
+`node_modules/` に Express がインストールされます。
+
+### 3. サーバ起動
+
+```bash
 npm start
 ```
 
-ターミナル表示の **<http://localhost:3000/>** をクリック（または自動で開きます）。
-
-> 自動オープンを無効化: `NO_OPEN=1 npm start`
-
----
-
-## 🔌 提供エンドポイント
-
-| URL | 内容 |
-|---|---|
-| <http://localhost:3000/> | 添付HTML表示 |
-| <http://localhost:3000/api/health> | ヘルスチェック |
-| <http://localhost:3000/api/ranking> | ランキングJSON（モック） |
-| <http://localhost:3000/api/sns> | SNS指標JSON（モック） |
-| <http://localhost:3000/api/merch> | 物販JSON（モック） |
-| <http://localhost:3000/api/next-update> | 次回更新時刻 |
-
----
-
-## ⚙ 任意設定
+または開発用（ファイル変更で自動再起動）：
 
 ```bash
-PORT=8080 npm start    # ポート変更
-NO_OPEN=1 npm start    # 自動ブラウザ起動を抑止
-npm run dev            # ファイル変更で自動再起動
+npm run dev
+```
+
+### 4. ブラウザでアクセス
+
+```
+http://localhost:3000
+```
+
+停止するには **Ctrl + C** を押してください。
+
+---
+
+## 🔧 ポート番号の変更
+
+環境変数 `PORT` で指定可能：
+
+```bash
+# Mac / Linux
+PORT=8080 npm start
+
+# Windows (PowerShell)
+$env:PORT=8080; npm start
+
+# Windows (cmd)
+set PORT=8080 && npm start
 ```
 
 ---
 
-## 🌐 外部からアクセスしたい場合
+## 📡 提供エンドポイント
 
-| 方法 | コマンド |
-|---|---|
-| 同一LAN内別端末から | PCのIP直打ち 例: `http://192.168.1.10:3000/` |
-| インターネット一時公開 | `npx ngrok http 3000` |
-| 本番デプロイ（無料枠あり） | Render / Railway / Fly.io / Vercel |
-
----
-
-## 🧯 トラブル時
-
-| 症状 | 対処 |
-|---|---|
-| `EADDRINUSE` | `PORT=8080 npm start` |
-| `command not found: npm` | Node.js 未インストール |
-| 画面真っ白 | `public/index.html` の存在確認 |
+| パス | 種別 | 内容 |
+|---|---|---|
+| `/` | HTML | トップページ（index.html） |
+| `/api/status` | JSON | システム稼働状況のモック |
+| `/api/shrines` | JSON | 神社仏閣データのモック |
+| `/<静的ファイル>` | 各種 | `public/` 配下のファイル |
 
 ---
 
-MIT License
+## 🎨 追加・反映済みの内容
+
+このモックは以下の機能追加版HTMLを配信します：
+
+- ✅ **「全社寺 完全比較表」に「地図」列を追加**：20社寺すべてにGoogleマップへのリンク
+- ✅ **「ご利益」ナビゲーションタブ追加**：「📊 一覧比較」と「🔄 自動更新」の間に配置
+- ✅ **「ご利益一覧」セクション追加**：20社寺のご利益・ご祭神（御本尊）をカード表示、神社／お寺で絞り込み可能
+
+---
+
+## 🛠 トラブルシュート
+
+### `EADDRINUSE: address already in use :::3000`
+別のアプリがポート3000を使用中です。別のポートで起動してください：
+
+```bash
+PORT=3001 npm start
+```
+
+### `npm install` が失敗する
+プロキシ環境下の場合は npm のプロキシ設定が必要です。
+社内ネットワークの場合は管理者にご確認ください。
+
+### 文字化けする
+HTMLは UTF-8 で保存されています。ブラウザの文字コード設定が「自動」または「UTF-8」になっているかご確認ください。
+
+---
+
+## 📝 ライセンス
+
+MIT
